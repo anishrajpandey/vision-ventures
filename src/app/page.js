@@ -1,41 +1,98 @@
 "use client";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import styles from "./../../styles/Home.module.css";
+import TextTransition, { presets } from "react-text-transition";
+
 import Navbar from "../components/Navbar";
+const TEXTS = [
+  "Photography  ",
+  "Digital Media Management",
+  "Videography",
+  "SEO ",
+  "Event Management",
+  "Hardware Services",
+  "Software Solution",
+  "Digital Marketing",
+];
+
 export default function Home() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(
+      () => setIndex((index) => index + 1),
+      5000 // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
+
   return (
-    <main>
+    <main className="">
       <Navbar />
       <section className="landingPage">
         <div className="background"></div>
-        <div className="content">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos tempora
-          exercitationem repudiandae. Aliquam, officiis obcaecati optio
-          doloremque earum numquam natus pariatur odio voluptatibus ut! Omnis
-          alias mollitia aliquam atque porro.x
-          <Image
-            src="/assets/man.png"
-            className="ml-auto"
-            width={600}
-            height={600}
-          />
+        <div className="content flex">
+          <div className="left flex-1 pt-20">
+            {/* fgfdg df */}
+            {/* <section className="my-12 text-5xl font-bold tracking-tight">
+              We help with &nbsp;
+              <TextTransition
+                style={{ margin: "2px 4px" }}
+                className=" flex justify-center text-green-800 uppercase"
+                inline
+              >
+                {TEXTS[index]} &nbsp;
+              </TextTransition>
+              to your business
+            </section> */}
+            <h2 class="mt-20 text-5xl font-bold tracking-tight text-center">
+              We help with &nbsp;
+              {/* <div className="flex justify-center">Solution For</div> */}
+              <span class="text-primary dark:text-primary-400">
+                <TextTransition
+                  className=" flex justify-center text-green-800 uppercase"
+                  springConfig={presets.wobbly}
+                  inline
+                >
+                  {TEXTS[index % TEXTS.length]} &nbsp;
+                </TextTransition>
+              </span>
+              for your business
+            </h2>
+            {/* --------- */}
+
+            <section class="mb-5 text-center">
+              <div class="px-6 py-5 md:px-12">
+                <p class="text-black ">
+                  Our company offers a comprehensive range of services to help
+                  businesses establish and enhance their brand image. We
+                  specialize in photography and videography, digital media
+                  management, graphic design, SEO, website design and
+                  development, event management, office infrastructure, hardware
+                  and network services, and software development. We are
+                  dedicated to helping businesses succeed by creating a strong
+                  and memorable brand identity.
+                </p>
+              </div>
+            </section>
+          </div>
+
+          <div className="right relative flex-1 pt-24">
+            <div>
+              <Image
+                src="/assets/manwithcomputer.gif"
+                className="ml-auto mt-4"
+                width={650}
+                height={650}
+                loading="lazy"
+                alt="image"
+              />
+            </div>
+            <div className={`absolute top-0 left-0 ${styles.blob}`}></div>
+          </div>
         </div>
       </section>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex praesentium
-      cupiditate libero repellat mollitia, voluptate numquam, laudantium saepe
-      minus, ea voluptates aspernatur totam. Ullam a, aut sapiente explicabo
-      officiis nesciunt? Lorem ipsum dolor sit amet, consectetur adipisicing
-      elit. Quaerat neque dolor blanditiis nemo mollitia eveniet doloremque
-      voluptatum aut sint? Ratione fuga quas iure minus, repellat quo doloribus.
-      Veritatis suscipit dolorem illum omnis, atque nam, ipsam laudantium
-      ratione aspernatur sint quasi explicabo doloremque obcaecati placeat vel
-      ab accusamus perspiciatis tempora asperiores? Dicta et tempore nesciunt
-      dolor at sequi unde distinctio ab temporibus quam eius aspernatur quasi
-      voluptatibus placeat, accusamus nobis beatae. Optio eligendi reprehenderit
-      quaerat quisquam adipisci qui quasi soluta, incidunt vel repellat, vitae
-      commodi laboriosam dignissimos provident vero voluptates aliquam fuga est
-      id asperiores totam ut amet laborum accusantium. Fugit, exercitationem
-      illo! Provident vitae asperiores fugiat accusamus error quidem ipsa vero
-      reiciendis iure magni. Incidunt nulla provident repudiandae quo magnam?
     </main>
   );
 }
