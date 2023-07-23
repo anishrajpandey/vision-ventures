@@ -8,6 +8,12 @@ import {
   Card,
 } from "@material-tailwind/react";
 import Image from "next/image";
+import { Overpass } from "next/font/google";
+const logoFont = Overpass({
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export default function Example() {
   const [openNav, setOpenNav] = React.useState(false);
 
@@ -56,7 +62,7 @@ export default function Example() {
         color="blue-gray"
         className="p-1 font-medium text-black hover:text-blue-950"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className={`flex items-center`}>
           Docs
         </a>
       </Typography>
@@ -75,13 +81,15 @@ export default function Example() {
             {" "}
             <div className="relative inline-block rounded-full overflow-hidden">
               <Image
-                src="/assets/logo.png"
-                width={50}
-                height={0}
+                src="/assets/logo.jpeg"
+                width={80}
+                height={80}
                 alt={"logo"}
               ></Image>
             </div>
-            <div className="h-5 flex align-middle text-black">
+            <div
+              className={`${logoFont.className} h-5 flex font-bold text-xl lg:text-3xl align-middle text-black`}
+            >
               Vision Ventures
             </div>
           </Typography>

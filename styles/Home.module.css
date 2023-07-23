@@ -158,7 +158,12 @@
     inset 100px 100px 0 0px #601229, inset 200px 200px 0 0px #2c0357,
     inset 300px 300px 0 0px #021624;
 }
-
+@media screen and (width<600px) {
+  .blob:hover {
+    -webkit-filter: blur(30px);
+    filter: blur(30px);
+  }
+}
 @-webkit-keyframes move {
   from {
     transform: translate(-100px, -50px) rotate(-90deg);

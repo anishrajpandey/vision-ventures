@@ -29,7 +29,7 @@ body {
   height: 100vh;
   position: relative;
   /* position */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .landingPage::after {
   content: "";
