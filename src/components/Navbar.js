@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Navbar,
-  MobileNav,
+  Collapse,
   Typography,
   Button,
   IconButton,
@@ -66,6 +66,29 @@ export default function Example() {
           Docs
         </a>
       </Typography>
+      <Typography
+        as="li"
+        variant="large"
+        color="blue-gray"
+        className="p-1 font-lg text-black hover:text-blue-950"
+      >
+        <a
+          href="#_"
+          class="relative inline-block text-lg group scale-75 md:scale-100"
+        >
+          <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
+            <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+            <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 md:bg-gray-900 group-hover:-rotate-180 ease"></span>
+            <span class="relative text-base md:text-xl">
+              Send message &#x2709;
+            </span>
+          </span>
+          <span
+            class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
+            data-rounded="rounded-lg"
+          ></span>
+        </a>
+      </Typography>
     </ul>
   );
 
@@ -88,24 +111,14 @@ export default function Example() {
               ></Image>
             </div>
             <div
-              className={`${logoFont.className} h-5 flex font-bold text-xl lg:text-3xl align-middle text-black`}
+              className={`${logoFont.className} h-5 flex font-bold text-lg md:text-xl lg:text-3xl align-middle text-black`}
             >
               Vision Ventures
             </div>
           </Typography>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
-            <a href="#_" class="relative inline-block text-lg group">
-              <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
-                <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
-                <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-gray-900 group-hover:-rotate-180 ease"></span>
-                <span class="relative">Connect with us</span>
-              </span>
-              <span
-                class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-gray-900 rounded-lg group-hover:mb-0 group-hover:mr-0"
-                data-rounded="rounded-lg"
-              ></span>
-            </a>
+
             {/* <Button
               variant="gradient"
               size="sm"
@@ -152,13 +165,13 @@ export default function Example() {
             </IconButton>
           </div>
         </div>
-        <MobileNav open={openNav}>
+        <Collapse open={openNav}>
           {navList}
 
           <Button variant="gradient" size="sm" fullWidth className="mb-2">
             <span>Buy Now</span>
           </Button>
-        </MobileNav>
+        </Collapse>
       </Navbar>
     </>
   );

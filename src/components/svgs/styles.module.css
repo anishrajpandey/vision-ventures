@@ -1,0 +1,23 @@
+#man {
+  animation: updown 900ms ease-in-out infinite alternate;
+}
+#spinner {
+  animation: spin 30s linear infinite;
+  transform-origin: 30% 50%;
+}
+@keyframes updown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+@keyframes spin {
+  from {
+    transform: scale(0.75) rotate(0);
+  }
+  to {
+    transform: scale(0.75) rotate(360deg);
+  }
+}

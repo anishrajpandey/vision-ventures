@@ -5,6 +5,7 @@ import styles from "./../../styles/Home.module.css";
 import TextTransition, { presets } from "react-text-transition";
 import { Permanent_Marker } from "next/font/google";
 import Navbar from "../components/Navbar";
+import Svg1 from "@/components/svgs/svg1";
 const TEXTS = [
   "Photography  ",
   "Digital Media Management",
@@ -58,18 +59,17 @@ export default function Home() {
                   businesses establish and enhance their brand image. We
                   specialize in photography and videography, digital media
                   management, graphic design, SEO, event management, and
-                  software development. We are dedicated to helping businesses
-                  succeed by creating a strong and memorable brand identity.
+                  software development.
                 </p>
               </div>
             </section>
             <div class="b animate-bounce mx-auto h-16 w-64 flex justify-center items-center">
               <div class="i h-16 w-64 bg-gradient-to-br from-yellow-400 to-red-600 items-center rounded-xl shadow-2xl  cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
               <a class="text-center text-white font-semibold z-10 pointer-events-none flex justify-content items-center">
-                Connect with Us
+                Explore Our Services
                 <span class="pl-3 ">
                   <svg
-                    class="w-5 h-5  right-1.5 relative"
+                    class="w-5 h-5  right-1.5 relative -rotate-90"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -104,26 +104,43 @@ export default function Home() {
           </div>
         </div>
       </section>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, officiis
-      illum soluta qui laborum facere quod similique vero dolore aliquid sed
-      consectetur eos cupiditate modi quas voluptatibus minima quisquam error
-      eius, nam aspernatur, eum recusandae sunt beatae? Commodi praesentium unde
-      veniam laborum voluptates! Facere fugiat aliquid harum dolor. Ut aut
-      eveniet inventore sed laudantium repellat. Aspernatur atque delectus
-      incidunt harum officia repudiandae reiciendis ipsam ab, quod ipsum!
-      Doloribus dolores dignissimos magnam, hic sint culpa animi iste tempore
-      neque quia veniam ipsam? Neque tempora magni totam quis dolorum soluta
-      laudantium, nesciunt, aperiam saepe, consequatur maiores ex sed error
-      nulla placeat corporis laborum aliquid suscipit quaerat eveniet aliquam
-      quod modi cumque nisi! Adipisci, totam aperiam optio molestiae asperiores
-      illo veniam reprehenderit ipsa excepturi sunt repellendus aliquid enim
-      beatae nemo corporis fuga quos ipsum commodi quas qui nulla assumenda
-      atque delectus quae! Obcaecati cumque numquam eos atque quia. Nesciunt
-      error accusantium ducimus quasi doloremque illum, consequatur veniam et id
-      odit cupiditate. Quos aliquid minus provident, expedita pariatur odio
-      veritatis debitis, laboriosam consectetur neque iure suscipit fuga amet,
-      quo deleniti doloribus necessitatibus sed molestias iste eum sunt
-      dignissimos? Odio soluta nam vel non aperiam?
+      {/* why choose us */}
+
+      <section className={`${styles.whyUs} flex flex-col`}>
+        <div className={`${styles.heading} p-5 `}>
+          <h1>WHY VISION VENTURES?</h1>
+        </div>
+
+        <div className="w-full  flex flex-col md:flex-row">
+          <div className="leftSide flex-1 pl-20 ">
+            <h2 className="title p-4 font-semibold">
+              <Image
+                className="inline-block"
+                width="24"
+                height="24"
+                src="/assets/starIcon.png"
+                alt="star-half-empty"
+              />
+              <span className="text-md md:text-lg ">
+                {" "}
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. .
+              </span>
+            </h2>
+            <div class=" px-5 mt-22 md:mt-1 md:px-12">
+              <p class="text-black text-sm ">
+                Our company offers a comprehensive range of services to help
+                businesses establish and enhance their brand image. We
+                specialize in photography and videography, digital media
+                management, graphic design, SEO, event management, and software
+                development.
+              </p>
+            </div>
+          </div>
+          <div className="rightSide flex-1 md:pl-16 flex justify-center ">
+            <Svg1 />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
