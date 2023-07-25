@@ -13,6 +13,14 @@
     transform: translateY(20px);
   }
 }
+@keyframes lilupdown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(7px);
+  }
+}
 @keyframes spin {
   from {
     transform: scale(0.75) rotate(0);
@@ -20,4 +28,61 @@
   to {
     transform: scale(0.75) rotate(360deg);
   }
+}
+
+#photographer {
+  animation: move 20s linear infinite alternate;
+}
+
+#lamp {
+  animation: scale 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite
+    alternate;
+  /* transform-origin: 40% 60%; */
+  transform-origin: center;
+}
+/* #hand {
+  animation: slightRotation 900ms cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    infinite;
+} */
+@keyframes scale {
+  to {
+    scale: 1.1;
+  }
+}
+@keyframes move {
+  0% {
+    transform: translate(-20%, -10%);
+  }
+  40% {
+    transform: translate(0%, 0%);
+  }
+  80% {
+    transform: translate(10%, 0%);
+  }
+  100% {
+    transform: translate(20%, 5%);
+  }
+}
+@keyframes slightRotation {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+#m1,
+#m2,
+#m3 {
+  animation: lilupdown 900ms cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite
+    alternate;
+}
+#m2 {
+  animation-delay: 2s;
+}
+#m3 {
+  animation-delay: 5s;
 }

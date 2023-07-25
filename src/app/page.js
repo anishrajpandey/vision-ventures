@@ -3,9 +3,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./../../styles/Home.module.css";
 import TextTransition, { presets } from "react-text-transition";
-import { Permanent_Marker } from "next/font/google";
+import { Anton } from "next/font/google";
 import Navbar from "../components/Navbar";
 import Svg1 from "@/components/svgs/svg1";
+import Photography from "@/components/svgs/Photography";
+import Manwithphone from "@/components/svgs/Manwithphone";
+import Services from "@/components/Services";
+import Card from "@/components/Card";
 const TEXTS = [
   "Photography  ",
   "Digital Media Management",
@@ -16,7 +20,7 @@ const TEXTS = [
   "Software Solution",
   "Digital Marketing",
 ];
-const font = Permanent_Marker({
+const font = Anton({
   weight: "400",
   subsets: ["latin"],
 });
@@ -43,7 +47,7 @@ export default function Home() {
               {/* <div className="flex justify-center">Solution For</div> */}
               <span class="text-primary dark:text-primary-400">
                 <TextTransition
-                  className={`flex justify-center text-yellow-300 uppercase ${font.className}`}
+                  className={`flex justify-center text-orange-700 uppercase  tracking-wider  ${font.className}`}
                   springConfig={presets.stiff}
                 >
                   {TEXTS[index % TEXTS.length]} &nbsp;
@@ -111,23 +115,54 @@ export default function Home() {
           <h1>WHY VISION VENTURES?</h1>
         </div>
 
-        <div className="w-full  flex flex-col md:flex-row">
-          <div className="leftSide flex-1 pl-20 ">
-            <h2 className="title p-4 font-semibold">
+        <div className="item w-full  flex flex-col md:flex-row">
+          <div className="leftSide flex-1 pl-2 md:pl-20 flex flex-col justify-center ">
+            <h2 className="title p-4 font-semibold flex gap-2 items-center ">
               <Image
                 className="inline-block"
-                width="24"
-                height="24"
+                width="40"
+                height="40"
                 src="/assets/starIcon.png"
                 alt="star-half-empty"
               />
-              <span className="text-md md:text-lg ">
+              <span className=" text-xl md:text-3xl ">
                 {" "}
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. .
+                We make your Business{" "}
+                <span className="font-bold text-orange-700">Stand Out</span>
               </span>
             </h2>
             <div class=" px-5 mt-22 md:mt-1 md:px-12">
-              <p class="text-black text-sm ">
+              <p class="text-black text-base md:text-lg  ">
+                Our company offers a comprehensive range of services to help
+                businesses establish and enhance their brand image. We
+                specialize in photography and videography, digital media
+                management, graphic design, SEO, event management, and software
+                development.
+              </p>
+            </div>
+          </div>
+          <div className="rightSide flex-1 md:pl-16 flex justify-start ">
+            <Svg1 />
+          </div>
+        </div>
+        <div className="w-full mt-12  flex flex-col md:flex-row-reverse">
+          <div className="leftSide flex-1 pl-2 md:pl-20 flex flex-col justify-center ">
+            <h2 className="title p-4 font-semibold flex gap-2 items-center ">
+              <Image
+                className="inline-block"
+                width="40"
+                height="40"
+                src="/assets/starIcon.png"
+                alt="star-half-empty"
+              />
+              <span className=" text-xl md:text-3xl ">
+                {" "}
+                We make your Business{" "}
+                <span className="font-bold text-orange-700">Stand Out</span>
+              </span>
+            </h2>
+            <div class=" px-5 mt-22 md:mt-1 md:px-12">
+              <p class="text-black text-base md:text-lg  ">
                 Our company offers a comprehensive range of services to help
                 businesses establish and enhance their brand image. We
                 specialize in photography and videography, digital media
@@ -137,9 +172,54 @@ export default function Home() {
             </div>
           </div>
           <div className="rightSide flex-1 md:pl-16 flex justify-center ">
-            <Svg1 />
+            <Photography />
           </div>
         </div>
+        {/* itm 3 */}
+        <div className="item w-full  flex flex-col md:flex-row">
+          <div className="leftSide flex-1 pl-2 md:pl-20 flex flex-col justify-center ">
+            <h2 className="title p-4 font-semibold flex gap-2 items-center ">
+              <Image
+                className="inline-block"
+                width="40"
+                height="40"
+                src={"/assets/starIcon.png"}
+                alt="star-half-empty"
+                placeholder="blur"
+                blurDataURL={"/assets/starIcon.png"}
+              />
+              <span className=" text-xl md:text-3xl ">
+                {" "}
+                We make your Business{" "}
+                <span className="font-bold text-orange-700">Stand Out</span>
+              </span>
+            </h2>
+            <div class=" px-5 mt-22 md:mt-1 md:px-12">
+              <p class="text-black text-base md:text-lg  ">
+                Our company offers a comprehensive range of services to help
+                businesses establish and enhance their brand image. We
+                specialize in photography and videography, digital media
+                management, graphic design, SEO, event management, and software
+                development.
+              </p>
+            </div>
+          </div>
+          <div className="rightSide flex-1 md:pl-16 flex justify-center mt-4 ">
+            <Manwithphone />
+          </div>
+        </div>
+        <div className="w-screen relative h-36">
+          <Image src={"/assets/wave-haikei.png"} layout="fill" alt="wave" />
+        </div>
+      </section>
+
+      {/* Services
+       */}
+      <section className="services">
+        <div className={`${styles.heading} p-5 uppercase `}>
+          <h1>Our Services</h1>
+        </div>
+        <Services />
       </section>
     </main>
   );

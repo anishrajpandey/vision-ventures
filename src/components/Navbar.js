@@ -30,37 +30,48 @@ export default function Example() {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium text-black hover:text-blue-950"
+        className="p-1 font-medium text-black hover:text-gray-600"
+      >
+        <div class="group relative text-md md:text-xl">
+          <button class=" text-black rounded inline-flex items-center group hover:text-gray-600">
+            <span class="">Services</span>
+            <svg
+              class="fill-current h-4 w-4 group-hover:rotate-180 transition-transform"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+            </svg>
+          </button>
+          <ul class="rounded absolute hidden text-gray-700 pt-1 w-fit group-hover:block z-40 ">
+            <li class="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer">
+              Photography
+            </li>
+            <li class="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer">
+              Videography
+            </li>
+            <li class="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer w-fit">
+              Event Management
+            </li>
+          </ul>
+        </div>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="text-md md:text-xl p-1 font-medium text-black hover:text-gray-600"
       >
         <a href="#" className="flex items-center">
           Pages
         </a>
       </Typography>
+
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 font-medium text-black hover:text-blue-950"
-      >
-        <a href="#" className="flex items-center">
-          Account
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium text-black hover:text-blue-950"
-      >
-        <a href="#" className="flex items-center">
-          Blocks
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium text-black hover:text-blue-950"
+        className="text-md md:text-xl p-1 font-medium text-black hover:text-gray-600"
       >
         <a href="#" className={`flex items-center`}>
           Docs
@@ -70,11 +81,11 @@ export default function Example() {
         as="li"
         variant="large"
         color="blue-gray"
-        className="p-1 font-lg text-black hover:text-blue-950"
+        className="p-1 font-lg text-black hover:text-blue-950 flex justify-start"
       >
         <a
           href="#_"
-          class="relative inline-block text-lg group scale-75 md:scale-100"
+          class="relative inline-block mr-auto text-lg group scale-75 md:scale-100"
         >
           <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white">
             <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
@@ -111,7 +122,7 @@ export default function Example() {
               ></Image>
             </div>
             <div
-              className={`${logoFont.className} h-5 flex font-bold text-lg md:text-xl lg:text-3xl align-middle text-black`}
+              className={`${logoFont.className} h-5 flex font-extrabold text-lg md:text-xl lg:text-3xl align-middle text-black`}
             >
               Vision Ventures
             </div>
