@@ -33,28 +33,16 @@ export default function Home() {
   return (
     <main className="">
       <Navbar />
-      <section className="landingPage">
-        <div className="background"></div>
-        <div className="content flex flex-col md:flex-row">
-          <div className="left flex-1 pt-20">
-            {/* fgfdg df */}
-            {/* <section className="my-12 text-5xl font-bold tracking-tight">
-              We help with &nbsp;
-              <TextTransition
-                style={{ margin: "2px 4px" }}
-                className=" flex justify-center text-green-800 uppercase"
-                inline
-              >
-                {TEXTS[index]} &nbsp;
-              </TextTransition>
-              to your business
-            </section> */}
-            <h2 class="mt-3 lg:mt-20 text-4xl font-bold tracking-tight text-center min-h-40 max-h-40">
+      <section className="landingPage w-full overflow-hidden  ">
+        {/* <div className=" w-full overflow-x-hidden"></div> */}
+        <div className="content flex flex-col md:flex-row min-h-fit ">
+          <div className="left flex-1 pt-4 md:pt-20">
+            <h2 class="lg:mt-20 text-3xl md:text-4xl font-bold tracking-tight text-center min-h-fit pb-4">
               We help your Business with
               {/* <div className="flex justify-center">Solution For</div> */}
               <span class="text-primary dark:text-primary-400">
                 <TextTransition
-                  className={`flex justify-center text-yellow-950 uppercase ${font.className}`}
+                  className={`flex justify-center text-yellow-300 uppercase ${font.className}`}
                   springConfig={presets.stiff}
                 >
                   {TEXTS[index % TEXTS.length]} &nbsp;
@@ -64,16 +52,14 @@ export default function Home() {
 
             {/* --------- */}
             <section class="mb-5 text-center">
-              <div class="px-6 py-5 mt-22 md:mt-12 md:px-12">
+              <div class=" p-5 mt-22 md:mt-2 md:px-12">
                 <p class="text-black ">
                   Our company offers a comprehensive range of services to help
                   businesses establish and enhance their brand image. We
                   specialize in photography and videography, digital media
-                  management, graphic design, SEO, website design and
-                  development, event management, office infrastructure, hardware
-                  and network services, and software development. We are
-                  dedicated to helping businesses succeed by creating a strong
-                  and memorable brand identity.
+                  management, graphic design, SEO, event management, and
+                  software development. We are dedicated to helping businesses
+                  succeed by creating a strong and memorable brand identity.
                 </p>
               </div>
             </section>
@@ -99,7 +85,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="right lg:relative flex-1 pt-24">
+          <div className="right b0 min-h-fit md:relative flex-1 pt-24">
             <div>
               <Image
                 src="/assets/manwithcomputer.gif"
@@ -110,10 +96,34 @@ export default function Home() {
                 alt="image"
               />
             </div>
-            <div className={`absolute top-0 left-0 ${styles.blob}`}></div>
+            <div className="overflow-hidden w-32 md:w-1/2">
+              <div
+                className={`absolute top-0 left-0 overflow-x-hidden ${styles.blob}`}
+              ></div>
+            </div>
           </div>
         </div>
       </section>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, officiis
+      illum soluta qui laborum facere quod similique vero dolore aliquid sed
+      consectetur eos cupiditate modi quas voluptatibus minima quisquam error
+      eius, nam aspernatur, eum recusandae sunt beatae? Commodi praesentium unde
+      veniam laborum voluptates! Facere fugiat aliquid harum dolor. Ut aut
+      eveniet inventore sed laudantium repellat. Aspernatur atque delectus
+      incidunt harum officia repudiandae reiciendis ipsam ab, quod ipsum!
+      Doloribus dolores dignissimos magnam, hic sint culpa animi iste tempore
+      neque quia veniam ipsam? Neque tempora magni totam quis dolorum soluta
+      laudantium, nesciunt, aperiam saepe, consequatur maiores ex sed error
+      nulla placeat corporis laborum aliquid suscipit quaerat eveniet aliquam
+      quod modi cumque nisi! Adipisci, totam aperiam optio molestiae asperiores
+      illo veniam reprehenderit ipsa excepturi sunt repellendus aliquid enim
+      beatae nemo corporis fuga quos ipsum commodi quas qui nulla assumenda
+      atque delectus quae! Obcaecati cumque numquam eos atque quia. Nesciunt
+      error accusantium ducimus quasi doloremque illum, consequatur veniam et id
+      odit cupiditate. Quos aliquid minus provident, expedita pariatur odio
+      veritatis debitis, laboriosam consectetur neque iure suscipit fuga amet,
+      quo deleniti doloribus necessitatibus sed molestias iste eum sunt
+      dignissimos? Odio soluta nam vel non aperiam?
     </main>
   );
 }

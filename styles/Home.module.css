@@ -1,134 +1,3 @@
-.block {
-  position: relative;
-  margin: auto 0;
-  width: 500px;
-  height: 250px;
-  background: linear-gradient(0deg, #000, #272727);
-}
-
-.block:before,
-.block:after {
-  content: "";
-  position: absolute;
-  left: -2px;
-  top: -2px;
-  background: linear-gradient(
-    45deg,
-    #fb0094,
-    #0000ff,
-    #00ff00,
-    #ffff00,
-    #ff0000,
-    #fb0094,
-    #0000ff,
-    #00ff00,
-    #ffff00,
-    #ff0000
-  );
-  background-size: 400%;
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  z-index: -1;
-  animation: steam 20s linear infinite;
-}
-
-@keyframes steam {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-.block:after {
-  filter: blur(50px);
-}
-/* dsfdjs fj=__________________________________________________________________________________________ */
-
-.box {
-  /* width: 300px;
-  height: 200px; */
-  /* background-color: #ddfff7; */
-  position: relative;
-  box-shadow: 10px 10px 42px 0 rgba(0, 0, 0, 0.75);
-}
-.box:after,
-.box:before {
-  mix-blend-mode: multiply;
-  filter: none;
-  z-index: -1;
-  content: "";
-  width: calc(100% + (50px * 2));
-  height: calc(100% + (50px * 2));
-  position: absolute;
-  display: block;
-  animation: border 10s ease-in-out infinite;
-  transform: translateX(-50px) translateY(-50px);
-}
-@keyframes border {
-  0%,
-  100% {
-    -webkit-clip-path: polygon(
-      0 0,
-      calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)),
-      100% 100%,
-      calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px))
-    );
-    clip-path: polygon(
-      0 0,
-      calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)),
-      100% 100%,
-      calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px))
-    );
-  }
-  50% {
-    -webkit-clip-path: polygon(
-      calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)),
-      100% 0,
-      calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)),
-      0 100%
-    );
-    clip-path: polygon(
-      calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)),
-      100% 0,
-      calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)),
-      0 100%
-    );
-  }
-}
-
-.box:after {
-  animation-delay: -5s;
-  background-color: #93e1d8;
-  clip-path: polygon(
-    0 0,
-    calc(100% - (33.3333333333px)) calc(0% + (33.3333333333px)),
-    100% 100%,
-    calc(0% + (33.3333333333px)) calc(100% - (33.3333333333px))
-  );
-}
-.box:before {
-  background-color: #aa4465;
-  clip-path: polygon(
-    calc(0% + (33.3333333333px)) calc(0% + (33.3333333333px)),
-    100% 0,
-    calc(100% - (33.3333333333px)) calc(100% - (33.3333333333px)),
-    0 100%
-  );
-}
-
-.box:hover:after {
-  animation-delay: -0.1s;
-}
-.box:hover:before,
-.box:hover:after {
-  animation-duration: 0.2s;
-}
-
 /* ------------------------------------------------------------------------------ */
 
 .blob {
@@ -140,8 +9,9 @@
     rgba(0, 0, 0, 0.495) 31.77%,
     #0b045c 100%
   );
+  /* background-color: red; */
   mix-blend-mode: color-dodge;
-  -webkit-animation: move 25s infinite alternate;
+  /* -webkit-animation: move 25s infinite alternate; */
   animation: move 25s infinite alternate;
   transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
 }
@@ -151,17 +21,30 @@
   height: 520px;
   -webkit-filter: blur(30px);
   filter: blur(30px);
-  /* box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.6),
-    inset 100px 100px 0 0px #fa709a, inset 200px 200px 0 0px #784ba8,
-    inset 300px 300px 0 0px #2b86c5; */
+
   box-shadow: inset 0 0 0 5px rgba(87, 66, 66, 0.044),
     inset 100px 100px 0 0px #601229, inset 200px 200px 0 0px #2c0357,
     inset 300px 300px 0 0px #021624;
 }
 @media screen and (width<600px) {
-  .blob:hover {
+  .blob {
     -webkit-filter: blur(30px);
     filter: blur(30px);
+    width: 100vw;
+    overflow-x: hidden;
+    height: 500px;
+    animation: rotate 25s infinite alternate;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(-90deg);
+      border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+    }
+
+    to {
+      transform: rotate(-10deg);
+      border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+    }
   }
 }
 @-webkit-keyframes move {
