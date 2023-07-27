@@ -4,12 +4,11 @@ import Image from "next/image";
 import styles from "./../../styles/Home.module.css";
 import TextTransition, { presets } from "react-text-transition";
 import { Anton } from "next/font/google";
-import Navbar from "../components/Navbar";
+
 import Svg1 from "@/components/svgs/svg1";
 import Photography from "@/components/svgs/Photography";
 import Manwithphone from "@/components/svgs/Manwithphone";
 import Services from "@/components/Services";
-import Card from "@/components/Card";
 const TEXTS = [
   "Photography  ",
   "Digital Media Management",
@@ -37,7 +36,6 @@ export default function Home() {
 
   return (
     <main className="">
-      <Navbar />
       <section className="landingPage w-full overflow-hidden  ">
         {/* <div className=" w-full overflow-x-hidden"></div> */}
         <div className="content flex flex-col md:flex-row min-h-fit ">
@@ -208,7 +206,7 @@ export default function Home() {
             <Manwithphone />
           </div>
         </div>
-        <div className="w-screen relative h-36">
+        <div className="w-screen relative h-56">
           <Image src={"/assets/wave-haikei.png"} layout="fill" alt="wave" />
         </div>
       </section>
