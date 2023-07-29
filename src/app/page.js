@@ -8,7 +8,8 @@ import { Anton } from "next/font/google";
 import Svg1 from "@/components/svgs/svg1";
 import Photography from "@/components/svgs/Photography";
 import Manwithphone from "@/components/svgs/Manwithphone";
-import Services from "@/components/Services";
+
+import SectionHome from "@/components/SectionHome";
 const TEXTS = [
   "Photography  ",
   "Digital Media Management",
@@ -67,7 +68,7 @@ export default function Home() {
             </section>
             <div class="b animate-bounce mx-auto h-16 w-64 flex justify-center items-center">
               <div class="i h-16 w-64 bg-gradient-to-br from-yellow-400 to-red-600 items-center rounded-xl shadow-2xl  cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
-              <a class="text-center text-white font-semibold z-10 pointer-events-none flex justify-content items-center">
+              <div class="text-center text-white font-semibold z-10 pointer-events-none flex justify-content items-center">
                 Explore Our Services
                 <span class="pl-3 ">
                   <svg
@@ -83,7 +84,7 @@ export default function Home() {
                     />
                   </svg>
                 </span>
-              </a>
+              </div>
             </div>
           </div>
 
@@ -206,19 +207,34 @@ export default function Home() {
             <Manwithphone />
           </div>
         </div>
-        <div className="w-screen relative h-56">
-          <Image src={"/assets/wave-haikei.png"} layout="fill" alt="wave" />
-        </div>
       </section>
 
       {/* Services
        */}
-      <section className="services">
-        <div className={`${styles.heading} p-5 uppercase `}>
-          <h1>Our Services</h1>
+      <div className="flex flex-col text-center items-center w-full mb-20 bg-cover h-64 mt-12 bg-black bg-opacity-70 relative ">
+        <div className="absolute w-full h-full opacity-90 bg-gray -z-20">
+          <Image
+            src={"/images/blackbg.jpg"}
+            className=" object-cover object-center"
+            fill
+            alt="bg"
+          />
         </div>
-        <Services />
+        <p className="lg:w-2/3 mx-auto leading-relaxed text-lg md:text-2xl h-full flex items-center  text-white ">
+          We offer a great value to our Godlike customers. Apart from
+          materialistic service, we owe you the trust and belief, which makes
+          our services more cherished.
+        </p>
+      </div>
+      <div className={`${styles.heading} p-5 uppercase `}>
+        <h1>Our Services</h1>
+      </div>
+      <section className="services bg-[url('/assets/circlepattern.svg')] bg-cover">
+        <SectionHome />
       </section>
+      <div className="w-screen relative h-56">
+        <Image src={"/assets/wave-haikei.png"} fill alt="wave" />
+      </div>
     </main>
   );
 }

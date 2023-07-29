@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import ServiceItem from "./ServiceItem";
-import { useState } from "react";
 
 const Services = () => {
   const serviceList = [
@@ -42,7 +41,7 @@ const Services = () => {
       img2: "/images/graphic2.jpg",
     },
     {
-      id: 4,
+      id: 5,
       title: "SEO and Web Development",
       description:
         "Our SEO services help your website rank higher in search engine results, driving more traffic and leads to your business. Additionally, our website design and development services create user-friendly and visually appealing websites that align with your brand's identity.",
@@ -51,7 +50,7 @@ const Services = () => {
       img2: "/images/seo2.jpg",
     },
     {
-      id: 4,
+      id: 6,
       title: " Digital Media management -marketing ",
       description:
         "We also offer digital media management services, including social media management and online advertising campaigns. Our graphic designers create visually appealing marketing assets, including logos, brochures, and marketing collateral that convey your brand's message effectively.",
@@ -62,21 +61,6 @@ const Services = () => {
   ];
   return (
     <section className="text-gray-600 body-font">
-      <div className="flex flex-col text-center items-center w-full mb-20 bg-cover h-64 bg-black bg-opacity-70 relative ">
-        <div className="absolute w-full h-full opacity-90 bg-gray -z-20">
-          <Image
-            src={"/images/blackbg.jpg"}
-            className=" object-cover object-center"
-            fill
-            alt="bg"
-          />
-        </div>
-        <p className="lg:w-2/3 mx-auto leading-relaxed text-lg md:text-2xl h-full flex items-center  text-white ">
-          We offer a great value to our Godlike customers. Apart from
-          materialistic service, we owe you the trust and belief, which makes
-          our services more cherished.
-        </p>
-      </div>
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-stretch ">
           {serviceList.map((options) => (
