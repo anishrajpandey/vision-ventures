@@ -27,11 +27,11 @@ const ServiceItem = ({ title, description, url, img1, img2 }) => {
           {/* <h3 className="text-gray-500 mb-3">UI Developer</h3> */}
           <p className="mb-4">{description}</p>
           <span className="inline-flex">
-            <div class="b hover:animate-pulse mx-auto h-16 w-64 flex justify-center items-center">
-              <div class="i h-16 w-48 bg-orange-600 items-center rounded-2xl shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
+            <div className="b hover:animate-pulse mx-auto h-16 w-64 flex justify-center items-center">
+              <div className="i h-16 w-48 bg-orange-600 items-center rounded-2xl shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
               <Link
                 href={url}
-                class="text-center text-white font-semibold z-10 "
+                className="text-center text-white font-semibold z-10 "
               >
                 Book Sevice
               </Link>

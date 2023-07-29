@@ -41,10 +41,10 @@ export default function Home() {
         {/* <div className=" w-full overflow-x-hidden"></div> */}
         <div className="content flex flex-col md:flex-row min-h-fit ">
           <div className="left flex-1 pt-4 md:pt-20">
-            <h2 class="lg:mt-20 text-3xl md:text-4xl font-bold tracking-tight text-center min-h-fit pb-4">
+            <h2 className="lg:mt-20 text-3xl md:text-4xl font-bold tracking-tight text-center min-h-fit pb-4">
               We help your Business with
               {/* <div className="flex justify-center">Solution For</div> */}
-              <span class="text-primary dark:text-primary-400">
+              <span className="text-primary dark:text-primary-400">
                 <TextTransition
                   className={`flex justify-center text-orange-700 uppercase  tracking-wider  ${font.className}`}
                   springConfig={presets.stiff}
@@ -55,9 +55,9 @@ export default function Home() {
             </h2>
 
             {/* --------- */}
-            <section class="mb-5 text-center">
-              <div class=" p-5 mt-22 md:mt-2 md:px-12">
-                <p class="text-black ">
+            <section className="mb-5 text-center">
+              <div className=" p-5 mt-22 md:mt-2 md:px-12">
+                <p className="text-black ">
                   Our company offers a comprehensive range of services to help
                   businesses establish and enhance their brand image. We
                   specialize in photography and videography, digital media
@@ -66,21 +66,21 @@ export default function Home() {
                 </p>
               </div>
             </section>
-            <div class="b animate-bounce mx-auto h-16 w-64 flex justify-center items-center">
-              <div class="i h-16 w-64 bg-gradient-to-br from-yellow-400 to-red-600 items-center rounded-xl shadow-2xl  cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
-              <div class="text-center text-white font-semibold z-10 pointer-events-none flex justify-content items-center">
+            <div className="b animate-bounce mx-auto h-16 w-64 flex justify-center items-center">
+              <div className="i h-16 w-64 bg-gradient-to-br from-yellow-400 to-red-600 items-center rounded-xl shadow-2xl  cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out"></div>
+              <div className="text-center text-white font-semibold z-10 pointer-events-none flex justify-content items-center">
                 Explore Our Services
-                <span class="pl-3 ">
+                <span className="pl-3 ">
                   <svg
-                    class="w-5 h-5  right-1.5 relative -rotate-90"
+                    className="w-5 h-5  right-1.5 relative -rotate-90"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
                 </span>
@@ -130,8 +130,8 @@ export default function Home() {
                 <span className="font-bold text-orange-700">Stand Out</span>
               </span>
             </h2>
-            <div class=" px-5 mt-22 md:mt-1 md:px-12">
-              <p class="text-black text-base md:text-lg  ">
+            <div className=" px-5 mt-22 md:mt-1 md:px-12">
+              <p className="text-black text-base md:text-lg  ">
                 Our company offers a comprehensive range of services to help
                 businesses establish and enhance their brand image. We
                 specialize in photography and videography, digital media
@@ -160,8 +160,8 @@ export default function Home() {
                 <span className="font-bold text-orange-700">Stand Out</span>
               </span>
             </h2>
-            <div class=" px-5 mt-22 md:mt-1 md:px-12">
-              <p class="text-black text-base md:text-lg  ">
+            <div className=" px-5 mt-22 md:mt-1 md:px-12">
+              <p className="text-black text-base md:text-lg  ">
                 Our company offers a comprehensive range of services to help
                 businesses establish and enhance their brand image. We
                 specialize in photography and videography, digital media
@@ -193,8 +193,8 @@ export default function Home() {
                 <span className="font-bold text-orange-700">Stand Out</span>
               </span>
             </h2>
-            <div class=" px-5 mt-22 md:mt-1 md:px-12">
-              <p class="text-black text-base md:text-lg  ">
+            <div className=" px-5 mt-22 md:mt-1 md:px-12">
+              <p className="text-black text-base md:text-lg  ">
                 Our company offers a comprehensive range of services to help
                 businesses establish and enhance their brand image. We
                 specialize in photography and videography, digital media
