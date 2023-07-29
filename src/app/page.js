@@ -258,7 +258,7 @@ export default function Home() {
               className="inline-block"
               width={200}
               height={200}
-              src={"/images/monkey.png"}
+              src={"/assets/monkey.jpeg"}
               alt="star-half-empty"
               placeholder="blur"
               blurDataURL={"/assets/monkey.png"}
