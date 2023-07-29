@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./../../styles/Home.module.css";
@@ -10,6 +11,7 @@ import Photography from "@/components/svgs/Photography";
 import Manwithphone from "@/components/svgs/Manwithphone";
 
 import SectionHome from "@/components/SectionHome";
+import Link from "next/link";
 const TEXTS = [
   "Photography  ",
   "Digital Media Management",
@@ -126,17 +128,20 @@ export default function Home() {
               />
               <span className=" text-xl md:text-3xl ">
                 {" "}
-                We make your Business{" "}
-                <span className="font-bold text-orange-700">Stand Out</span>
+                WE HELP YOU BUILD A&nbsp;
+                <span className="font-bold text-orange-700">
+                  TECHNICAL ECOSYSTEM
+                </span>
               </span>
             </h2>
             <div className=" px-5 mt-22 md:mt-1 md:px-12">
               <p className="text-black text-base md:text-lg  ">
-                Our company offers a comprehensive range of services to help
-                businesses establish and enhance their brand image. We
-                specialize in photography and videography, digital media
-                management, graphic design, SEO, event management, and software
-                development.
+                Do you want to build a successful technology business? If so,
+                you need to build a strong technical ecosystem around your
+                company.We are a team of experienced ecosystem builders who can
+                help you build a successful technical ecosystem for your
+                business. We have a proven track record of success, and we are
+                passionate about helping businesses grow and succeed.
               </p>
             </div>
           </div>
@@ -153,20 +158,23 @@ export default function Home() {
                 height="40"
                 src="/assets/starIcon.png"
                 alt="star-half-empty"
-              />
+              />{" "}
               <span className=" text-xl md:text-3xl ">
                 {" "}
-                We make your Business{" "}
-                <span className="font-bold text-orange-700">Stand Out</span>
+                WE MAKE YOUR BUSINESS
+                <span className="font-bold text-orange-700">
+                  &nbsp;STAND OUT{" "}
+                </span>
               </span>
             </h2>
             <div className=" px-5 mt-22 md:mt-1 md:px-12">
               <p className="text-black text-base md:text-lg  ">
-                Our company offers a comprehensive range of services to help
-                businesses establish and enhance their brand image. We
-                specialize in photography and videography, digital media
-                management, graphic design, SEO, event management, and software
-                development.
+                By working with us, you can be sure that your business will
+                stand out from the competition and achieve its full potential.
+                We understand the challenges that businesses face, and we are
+                committed to providing you with the solutions you need to
+                succeed. If you are ready to take your business to the next
+                level, contact us today to learn more about it.
               </p>
             </div>
           </div>
@@ -189,17 +197,23 @@ export default function Home() {
               />
               <span className=" text-xl md:text-3xl ">
                 {" "}
-                We make your Business{" "}
-                <span className="font-bold text-orange-700">Stand Out</span>
+                <span className=" text-xl md:text-3xl ">
+                  {" "}
+                  WE OFFER YOU THE&nbsp;
+                  <span className="font-bold text-orange-700">FREEDOM </span>
+                  &nbsp;OF FULL
+                  <span className="font-bold text-orange-700">
+                    &nbsp;CUSTOMIZATION
+                  </span>
+                </span>
               </span>
             </h2>
             <div className=" px-5 mt-22 md:mt-1 md:px-12">
               <p className="text-black text-base md:text-lg  ">
-                Our company offers a comprehensive range of services to help
-                businesses establish and enhance their brand image. We
-                specialize in photography and videography, digital media
-                management, graphic design, SEO, event management, and software
-                development.
+                If you are looking for a way to stand out from the competition,
+                then custom made software is the answer. Contact us today to
+                learn more about how we can help you create custom made software
+                that will give you a competitive advantage.
               </p>
             </div>
           </div>
@@ -236,6 +250,39 @@ export default function Home() {
       <div className="w-screen relative h-56">
         <Image src={"/assets/wave-haikei.png"} fill alt="wave" />
       </div>
+
+      <section className="moreServices w-full md:w-3/4">
+        <div className="item w-full  flex  md:flex-row">
+          <div className="leftSide flex-1 pl-2 md:pl-20 flex  justify-start md:justify-end ">
+            <Image
+              className="inline-block"
+              width={200}
+              height={200}
+              src={"/images/monkey.png"}
+              alt="star-half-empty"
+              placeholder="blur"
+              blurDataURL={"/assets/monkey.png"}
+            />
+          </div>
+          <div className="rightSide flex-1 flex flex-col gap-4 bg-slate-700 rounded-lg justify-center text-white md:pl-16 mt-4 ">
+            <h2 className="title p-4 text-xl md:text-4xl font-semibold flex gap-2 items-center ">
+              Dont see what you are looking for?
+            </h2>
+
+            <div className="relative inline-flex w-fit group">
+              <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
+              <Link
+                href="/services"
+                title="View All Services"
+                className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                role="button"
+              >
+                View All Services
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
