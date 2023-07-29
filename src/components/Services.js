@@ -58,6 +58,24 @@ const Services = () => {
       img1: "/images/marketing1.jpg",
       img2: "/images/marketing2.jpg",
     },
+    {
+      id: 7,
+      title: "Software and Website Design & Development ",
+      description:
+        "Are you looking for a web development agency that can help you take your business to the next level? Look no further! We are a team of experienced web developers who are passionate about helping businesses succeed. We have a proven track record of creating high-quality websites that are both functional and visually appealing",
+      url: "/services/webdev",
+      img1: "/images/webdev2.jpg",
+      img2: "/images/seo2.jpg",
+    },
+    {
+      id: 8,
+      title: "Software and Website Design & Development ",
+      description:
+        "Are you looking for a web development agency that can help you take your business to the next level? Look no further! We are a team of experienced web developers who are passionate about helping businesses succeed. We have a proven track record of creating high-quality websites that are both functional and visually appealing",
+      url: "/services/webdev",
+      img1: "/images/officeinfrastructure.png",
+      img2: "/images/event1.jpg",
+    },
   ];
   return (
     <section className="text-gray-600 body-font">
