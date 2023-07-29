@@ -229,9 +229,10 @@ export default function Home() {
       <div className={`${styles.heading} p-5 uppercase `}>
         <h1>Our Services</h1>
       </div>
-      <section className="services bg-[url('/assets/circlepattern.svg')] bg-cover">
+      <section className="services bg-gradient-to-b from-white to-blue-600 bg-cover">
         <SectionHome />
       </section>
+
       <div className="w-screen relative h-56">
         <Image src={"/assets/wave-haikei.png"} fill alt="wave" />
       </div>
