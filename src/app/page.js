@@ -36,7 +36,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="">
+    <main className="max-w-full overflow-x-hidden">
       <section className="landingPage w-full overflow-hidden  ">
         {/* <div className=" w-full overflow-x-hidden"></div> */}
         <div className="content flex flex-col md:flex-row min-h-fit ">
@@ -109,12 +109,12 @@ export default function Home() {
       </section>
       {/* why choose us */}
 
-      <section className={`${styles.whyUs} flex flex-col`}>
+      <section className={`${styles.whyUs} flex flex-col w-72  `}>
         <div className={`${styles.heading} p-5 `}>
           <h1>WHY VISION VENTURES?</h1>
         </div>
 
-        <div className="item w-full  flex flex-col md:flex-row">
+        <div className="item  flex flex-col md:flex-row">
           <div className="leftSide flex-1 pl-2 md:pl-20 flex flex-col justify-center ">
             <h2 className="title p-4 font-semibold flex gap-2 items-center ">
               <Image
