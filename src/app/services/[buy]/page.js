@@ -73,9 +73,6 @@ const page = () => {
             placeholder="abc@xyz.com"
             required
           />
-          {/* <p class="text-red-500 text-xs italic">
-              Please fill out this field.
-            </p> */}
         </div>
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
