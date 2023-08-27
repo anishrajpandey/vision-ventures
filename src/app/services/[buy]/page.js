@@ -1,29 +1,42 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Page = () => {
+  const [type, setType] = useState("Everything");
+  const categories = [
+    "Photography and Videography  ",
+    "Event Management",
+    "Hardware and Software Solutions",
+    "Graphic Design/ Animation & Logo Design ",
+    " Website SEO Development",
+    "Digital Media management -marketing",
+    "Website Design & Development",
+    "Office Infrastructure",
+  ];
   let path = usePathname();
   useEffect(() => {
-    console.log(path.split("/").at(-1));
-  });
+    let category = categories[path.split("/").at(-1)];
+    setType(category);
+  }, []);
   return (
     <main className="pt-2 md:pt-28">
       <div className="header w-screen relative h-60">
-        {/* <Image
+        <Image
           src={"/assets/working.gif"}
           className="absolute right-0 hidden md:-top-32 md:block"
           width={500}
           height={400}
           alt="workin"
-        ></Image> */}
+          loading="lazy"
+        ></Image>
         <div className="w-full md:w-1/2">
-          <h1 className="text-center text-2xl md:text-5xl font-bold py-12 text-slate-700">
-            Cool !!
+          <h1 className="text-center text-2xl md:text-5xl font-bold pt-12 text-slate-700">
+            Book a service for - {type}
           </h1>
-          <h2 className="text-center text-xxl  font-semibold  text-slate-700">
-            Lets Fill in the Details of the order
+          <h2 className="text-center text-md mb-5  font-semibold  text-slate-700">
+            You are one step away from getting our service{" "}
           </h2>
         </div>
       </div>
@@ -131,7 +144,22 @@ const Page = () => {
               </select>
             </div>
           </div>
-
+          <div className=" w-full  my-6 md:mb-0">
+            <label
+              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="description"
+            >
+              Explain Your Project{" "}
+            </label>
+            <textarea
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="desc"
+              type="text"
+              placeholder="I want my project to be like..."
+              rows={9}
+              required
+            ></textarea>
+          </div>
           {/* file upload */}
 
           <div className="flex gap-2 flex-col justify-center w-full pt-5">
