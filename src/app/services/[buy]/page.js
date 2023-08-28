@@ -3,8 +3,9 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { storage } from "@/firebase/firebase-config";
+import { db, storage } from "@/firebase/firebase-config";
 import { v4 as uuidv4 } from "uuid";
+import { collection, addDoc } from "firebase/firestore";
 const Page = () => {
   // const [data, setData] = useState({
   //   name,
@@ -16,6 +17,7 @@ const Page = () => {
   // });
   const [type, setType] = useState("Everything");
   const [FileName, setFileName] = useState(null);
+  const [orderDetails, setOrderDetails] = useState({});
   const categories = [
     "Photography and Videography  ",
     "Event Management",
@@ -27,10 +29,7 @@ const Page = () => {
     "Office Infrastructure",
   ];
   function handleChangeData() {}
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(e.target.children);
-  }
+
   let path = usePathname();
   useEffect(() => {
     let category = categories[path.split("/").at(-1)];
@@ -39,13 +38,34 @@ const Page = () => {
 
   const uploadImage = async () => {
     if (FileName == null) return;
-    const fileref = ref(storage, `files/${FileName.name}`);
+    const fileref = ref(storage, `files/${FileName.name + uuidv4()} `);
     await uploadBytes(fileref, FileName);
     let url = await getDownloadURL(fileref);
-    console.log(url);
-    // console.log(message);
-    alert("uploaded");
+    return url;
   };
+
+  async function handleSubmitOrder(e) {
+    e.preventDefault();
+
+    const inputs = e.target.elements;
+    let url = await uploadImage();
+    setOrderDetails(() => ({
+      Name: inputs[0].value + inputs[1].value,
+      Email: inputs[2].value,
+      Phone: inputs[3].value,
+      Address: inputs[4].value + ", " + inputs[5].value,
+      Description: inputs[6].value,
+      Url: url,
+      Type: type,
+    }));
+
+    //posting to the database
+
+    const orderCollectionRef = collection(db, "orders");
+    let response = await addDoc(orderCollectionRef, orderDetails);
+    console.log(response);
+  }
+
   return (
     <main className="pt-2 md:pt-28">
       <div className="header w-screen relative h-60">
@@ -68,7 +88,7 @@ const Page = () => {
       </div>
 
       {/* actual form starts from here */}
-      <form className="w-full max-w-lg mx-auto " onSubmit={handleSubmit}>
+      <form className="w-full max-w-lg mx-auto " onSubmit={handleSubmitOrder}>
         {/* email */}
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
