@@ -6,6 +6,9 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { db, storage } from "@/firebase/firebase-config";
 import { v4 as uuidv4 } from "uuid";
 import { collection, addDoc } from "firebase/firestore";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Spinner } from "@material-tailwind/react";
 const Page = () => {
   // const [data, setData] = useState({
   //   name,
@@ -18,6 +21,7 @@ const Page = () => {
   const [type, setType] = useState("Everything");
   const [FileName, setFileName] = useState(null);
   const [orderDetails, setOrderDetails] = useState({});
+  const [loading, setLoading] = useState(false);
   const categories = [
     "Photography and Videography  ",
     "Event Management",
@@ -45,6 +49,7 @@ const Page = () => {
   };
 
   async function handleSubmitOrder(e) {
+    setLoading(true);
     e.preventDefault();
 
     const inputs = e.target.elements;
@@ -64,6 +69,17 @@ const Page = () => {
     const orderCollectionRef = collection(db, "orders");
     let response = await addDoc(orderCollectionRef, orderDetails);
     console.log(response);
+    setLoading(false);
+    toast.success("🦄 Wow so easy!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   }
 
   return (
@@ -264,13 +280,27 @@ const Page = () => {
         >
           Clear
         </button>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </form>
-      <button
-        onClick={uploadImage}
-        className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
-      >
-        Upload Image
-      </button>
+
+      {loading && (
+        <div className="h-screen w-screen fixed top-0 grid items-center justify-center bg-white overflow-y-hidden">
+          {/* <div className=" absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"> */}
+          <Spinner className="h-24 w-24 text-gray-900/50" />
+          {/* </div> */}
+        </div>
+      )}
     </main>
   );
 };

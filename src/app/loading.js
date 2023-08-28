@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
-
+import { Spinner } from "@material-tailwind/react";
 const loading = () => {
   return (
-    <div className="absolute  right-1/2 bottom-1/2  transform translate-x-1/2 translate-y-1/2 ">
-      <div className="border-t-transparent border-solid animate-spin  rounded-full border-blue-400 border-8 h-64 w-64"></div>
+    <div className="h-screen w-screen fixed top-0 grid items-center justify-center bg-white overflow-y-hidden">
+      <Spinner className="h-24 w-24 text-gray-900/50" />
     </div>
   );
 };
