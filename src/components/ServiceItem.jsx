@@ -33,7 +33,7 @@ const ServiceItem = ({ title, description, url, img1, img2 }) => {
                 href={url}
                 className="text-center text-white font-semibold z-10 "
               >
-                Book Sevice
+                Book Service
               </Link>
             </div>
           </span>

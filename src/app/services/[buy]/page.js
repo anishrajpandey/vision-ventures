@@ -2,9 +2,20 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { storage } from "@/firebase/firebase-config";
+import { v4 as uuidv4 } from "uuid";
 const Page = () => {
+  // const [data, setData] = useState({
+  //   name,
+  //   email,
+  //   phone,
+  //   location,
+  //   description,
+  //   url,
+  // });
   const [type, setType] = useState("Everything");
+  const [FileName, setFileName] = useState(null);
   const categories = [
     "Photography and Videography  ",
     "Event Management",
@@ -15,11 +26,26 @@ const Page = () => {
     "Website Design & Development",
     "Office Infrastructure",
   ];
+  function handleChangeData() {}
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(e.target.children);
+  }
   let path = usePathname();
   useEffect(() => {
     let category = categories[path.split("/").at(-1)];
     setType(category);
   }, []);
+
+  const uploadImage = async () => {
+    if (FileName == null) return;
+    const fileref = ref(storage, `files/${FileName.name}`);
+    await uploadBytes(fileref, FileName);
+    let url = await getDownloadURL(fileref);
+    console.log(url);
+    // console.log(message);
+    alert("uploaded");
+  };
   return (
     <main className="pt-2 md:pt-28">
       <div className="header w-screen relative h-60">
@@ -42,7 +68,7 @@ const Page = () => {
       </div>
 
       {/* actual form starts from here */}
-      <form className="w-full max-w-lg mx-auto ">
+      <form className="w-full max-w-lg mx-auto " onSubmit={handleSubmit}>
         {/* email */}
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -197,7 +223,12 @@ const Page = () => {
                   SVG, PNG, JPG or GIF (MAX. 800x400px)
                 </p>
               </div>
-              <input id="dropzone-file" type="file" className="hidden" />
+              <input
+                id="dropzone-file"
+                type="file"
+                className="hidden"
+                onChange={(e) => setFileName(e.target.files[0])}
+              />
             </label>
           </div>
         </div>
@@ -214,6 +245,12 @@ const Page = () => {
           Clear
         </button>
       </form>
+      <button
+        onClick={uploadImage}
+        className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+      >
+        Upload Image
+      </button>
     </main>
   );
 };
