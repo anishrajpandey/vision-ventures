@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import AdminLoginPage from "@/components/AdminLoginPage";
 const Page = () => {
   const [orders, setOrders] = useState({});
   let collectionRef = collection(db, "orders");
@@ -28,7 +29,8 @@ const Page = () => {
 
   return (
     <>
-      <div className="h-screen"></div>
+      <h1 className="text-center">Login with admin credentials</h1>
+      <AdminLoginPage />
       <button onClick={getOrders}>log it </button>
       <ToastContainer
         position="bottom-right"
