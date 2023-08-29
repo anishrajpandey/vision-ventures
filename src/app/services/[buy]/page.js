@@ -10,15 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Spinner } from "@material-tailwind/react";
 const Page = () => {
-  // const [data, setData] = useState({
-  //   name,
-  //   email,
-  //   phone,
-  //   location,
-  //   description,
-  //   url,
-  // });
-  const [type, setType] = useState("Everything");
+  const [type, setType] = useState("Book a service");
   const [FileName, setFileName] = useState(null);
   const [orderDetails, setOrderDetails] = useState({});
   const [loading, setLoading] = useState(false);
@@ -70,16 +62,19 @@ const Page = () => {
     let response = await addDoc(orderCollectionRef, orderDetails);
     console.log(response);
     setLoading(false);
-    toast.success("🦄 Wow so easy!", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+    toast.success(
+      "Order Sent Successfully ! Expect a call from us in 1 - 2 business days regarding the project",
+      {
+        position: "bottom-right",
+        autoClose: 8000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      }
+    );
   }
 
   return (
@@ -95,7 +90,7 @@ const Page = () => {
         ></Image>
         <div className="w-full md:w-1/2">
           <h1 className="text-center text-2xl md:text-5xl font-bold pt-12 text-slate-700">
-            Book a service for - {type}
+            {type}
           </h1>
           <h2 className="text-center text-md mb-5  font-semibold  text-slate-700">
             You are one step away from getting our service{" "}
@@ -211,7 +206,7 @@ const Page = () => {
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               htmlFor="description"
             >
-              Explain Your Project{" "}
+              Explain Your Project {"(optional) "}
             </label>
             <textarea
               className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -219,7 +214,6 @@ const Page = () => {
               type="text"
               placeholder="I want my project to be like..."
               rows={9}
-              required
             ></textarea>
           </div>
           {/* file upload */}
@@ -229,7 +223,7 @@ const Page = () => {
               className="block uppercase tracking-wide text-gray-700 text-xs pl-4 font-bold mb-2"
               htmlFor="grid-state"
             >
-              Choose File to Upload
+              Choose File to Upload {"(if you have any)"}
             </label>
             <label
               htmlFor="dropzone-file"
@@ -251,19 +245,29 @@ const Page = () => {
                     d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
                   />
                 </svg>
-                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                  <span className="font-semibold">Click to upload</span> or drag
-                  and drop
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  SVG, PNG, JPG or GIF (MAX. 800x400px)
-                </p>
+                {FileName?.name ? (
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                    {FileName.name}
+                  </p>
+                ) : (
+                  <>
+                    <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                      <span className="font-semibold">Click to upload</span>
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      SVG, PNG, JPG or GIF (MAX. 800x400px)
+                    </p>
+                  </>
+                )}
               </div>
               <input
                 id="dropzone-file"
                 type="file"
                 className="hidden"
-                onChange={(e) => setFileName(e.target.files[0])}
+                onChange={(e) => {
+                  setFileName(e.target.files[0]);
+                  console.log(e.target.files[0].name);
+                }}
               />
             </label>
           </div>

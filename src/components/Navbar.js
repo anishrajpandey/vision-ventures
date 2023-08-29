@@ -123,7 +123,7 @@ export default function Example() {
 
   return (
     <>
-      <Navbar className="lg:absolute top-0 bg-transparent border-0 z-10 h-max scroll-m-9 max-w-full w-screen rounded-none py-2 px-4 lg:px-8 lg:py-4">
+      <Navbar className="shadow-none  lg:absolute top-0 bg-transparent border-0 z-10 h-max scroll-m-9 max-w-full w-screen rounded-none py-2 px-4 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
           {" "}
           <div
