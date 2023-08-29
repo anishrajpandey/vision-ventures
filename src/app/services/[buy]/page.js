@@ -37,6 +37,7 @@ const Page = () => {
     const fileref = ref(storage, `files/${FileName.name + uuidv4()} `);
     await uploadBytes(fileref, FileName);
     let url = await getDownloadURL(fileref);
+
     return url;
   };
 
@@ -46,21 +47,21 @@ const Page = () => {
 
     const inputs = e.target.elements;
     let url = await uploadImage();
-    setOrderDetails(() => ({
-      Name: inputs[0].value + inputs[1].value,
-      Email: inputs[2].value,
-      Phone: inputs[3].value,
-      Address: inputs[4].value + ", " + inputs[5].value,
-      Description: inputs[6].value,
-      Url: url,
-      Type: type,
+    setOrderDetails((orderDetails) => ({
+      ...orderDetails,
+      // Url: url,
+      // Type: type,
     }));
-
+    console.log(orderDetails);
     //posting to the database
 
     const orderCollectionRef = collection(db, "orders");
-    let response = await addDoc(orderCollectionRef, orderDetails);
-    console.log(response);
+    let response = await addDoc(orderCollectionRef, {
+      ...orderDetails,
+      Url: url,
+      Type: type,
+    });
+    // console.log(response);
     setLoading(false);
     toast.success(
       "Order Sent Successfully ! Expect a call from us in 1 - 2 business days regarding the project",
@@ -110,6 +111,9 @@ const Page = () => {
               First Name*
             </label>
             <input
+              onChange={(e) => {
+                setOrderDetails({ ...orderDetails, FirstName: e.target.value });
+              }}
               className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
@@ -128,6 +132,12 @@ const Page = () => {
               Last Name
             </label>
             <input
+              onChange={(e) => {
+                setOrderDetails({
+                  ...orderDetails,
+                  LastName: e.target.value,
+                });
+              }}
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               type="text"
@@ -143,6 +153,9 @@ const Page = () => {
             Email*
           </label>
           <input
+            onChange={(e) => {
+              setOrderDetails({ ...orderDetails, Email: e.target.value });
+            }}
             className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="email"
             type="text"
@@ -159,6 +172,9 @@ const Page = () => {
               Phone*
             </label>
             <input
+              onChange={(e) => {
+                setOrderDetails({ ...orderDetails, Phone: e.target.value });
+              }}
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="phone"
               type="num"
@@ -171,7 +187,7 @@ const Page = () => {
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-2">
-          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+          <div className="w-full  px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               htmlFor="grid-city"
@@ -179,28 +195,16 @@ const Page = () => {
               Location
             </label>
             <input
+              onChange={(e) => {
+                setOrderDetails({ ...orderDetails, Address: e.target.value });
+              }}
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-city"
               type="text"
               placeholder="Albuquerque"
             />
           </div>
-          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-state"
-            >
-              City
-            </label>
-            <div className="relative">
-              <select
-                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
-              >
-                <option defaultValue={"Kathmandu"}>Kathmandu</option>
-              </select>
-            </div>
-          </div>
+
           <div className=" w-full  my-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -214,6 +218,12 @@ const Page = () => {
               type="text"
               placeholder="I want my project to be like..."
               rows={9}
+              onChange={(e) => {
+                setOrderDetails({
+                  ...orderDetails,
+                  Description: e.target.value,
+                });
+              }}
             ></textarea>
           </div>
           {/* file upload */}
