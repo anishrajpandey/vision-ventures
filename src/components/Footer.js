@@ -20,9 +20,9 @@ const Footer = () => {
               href="https://www.facebook.com/visionventuresbrandingcompany"
               target="blank"
             >
-              <button class="bg-blue-500 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
+              <button className="bg-blue-500 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
                 <svg
-                  class="w-5 h-5 fill-current"
+                  className="w-5 h-5 fill-current"
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -32,9 +32,9 @@ const Footer = () => {
               </button>
             </a>
             <a href="https://twitter.com/" target="blank">
-              <button class="bg-blue-400 p-2 m-1 font-semibold text-white inline-flex items-center space-x-2 rounded">
+              <button className="bg-blue-400 p-2 m-1 font-semibold text-white inline-flex items-center space-x-2 rounded">
                 <svg
-                  class="w-5 h-5 fill-current"
+                  className="w-5 h-5 fill-current"
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -49,11 +49,11 @@ const Footer = () => {
                 type="button"
                 data-te-ripple-init
                 data-te-ripple-color="light"
-                class="bg-pink-700 p-2 m-1 font-semibold text-white inline-flex items-center space-x-2 rounded"
+                className="bg-pink-700 p-2 m-1 font-semibold text-white inline-flex items-center space-x-2 rounded"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
+                  className="h-4 w-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
