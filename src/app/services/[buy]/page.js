@@ -46,7 +46,7 @@ const Page = () => {
     e.preventDefault();
 
     const inputs = e.target.elements;
-    let url = await uploadImage();
+    let url = (await uploadImage()) || null;
     setOrderDetails((orderDetails) => ({
       ...orderDetails,
       // Url: url,
