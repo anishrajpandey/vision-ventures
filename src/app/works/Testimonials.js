@@ -30,7 +30,7 @@ const Testimonials = () => {
           orders.map(({ Name, Post, Testimonial, ImageURL, id }) => {
             return (
               <Fade key={id}>
-                <div className="flex flex-col max-w-sm mx-4 my-6 shadow-lg">
+                <div className="flex flex-col max-w-sm mx-4 my-3 shadow-lg">
                   <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 dark:bg-gray-900">
                     <p className="relative px-6 py-1 text-lg italic text-center dark:text-gray-100">
                       <svg
@@ -55,13 +55,15 @@ const Testimonials = () => {
                     </p>
                   </div>
                   <div className="flex flex-col items-center justify-center p-8 rounded-b-lg ">
-                    <Image
-                      src={ImageURL}
-                      alt=""
-                      className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full"
-                      height={50}
-                      width={50}
-                    />
+                    {ImageURL && (
+                      <Image
+                        src={ImageURL}
+                        alt=""
+                        className="w-16 h-16 mb-2 -mt-16 bg-center bg-cover rounded-full"
+                        height={50}
+                        width={50}
+                      />
+                    )}
                     <p className="text-xl font-semibold leadi">{Name}</p>
                     <p className="text-sm uppercase">{Post}</p>
                   </div>

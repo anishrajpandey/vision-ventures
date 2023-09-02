@@ -14,6 +14,7 @@ import {
 import ManageOrder from "./ManageOrder";
 import AddWorks from "./AddWorks";
 import AddTestimonial from "./AddTestimonial";
+import UserMessages from "./UserMessages";
 const Page = () => {
   const [orders, setOrders] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -78,17 +79,9 @@ const Page = () => {
       desc: <AddTestimonial />,
     },
     {
-      label: "Angular",
-      value: "angular",
-      desc: `Because it's about motivating the doers. Because I'm here
-      to follow my dreams and inspire other people to follow their dreams, too.`,
-    },
-    {
-      label: "Svelte",
-      value: "svelte",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      label: "See User Messages",
+      value: "messages",
+      desc: <UserMessages />,
     },
   ];
 
@@ -97,16 +90,6 @@ const Page = () => {
     console.log(orders);
   }, []);
   //delete the orders
-  async function handleDeleteOrder(id) {
-    let document = doc(db, "orders", id);
-    deleteDoc(document)
-      .then(() => {
-        toast.success("Deleted Successfully");
-      })
-      .catch(() => {
-        toast.error("Some Error Occured");
-      });
-  }
 
   //details page component
 

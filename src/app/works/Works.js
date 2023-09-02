@@ -40,14 +40,15 @@ const Works = () => {
                         <div className="overflow-hidden w-full m-4 shadow-sm flex flex-col md:flex-row justify-center">
                           <div className="flex flex-col md:flex-row items-center">
                             <div className=" w-full overflow-hidden relative ">
-                              {" "}
-                              <Image
-                                width={600}
-                                height={400}
-                                src={ImageURL}
-                                alt="Image not available"
-                                className="contain"
-                              />{" "}
+                              {ImageURL && (
+                                <Image
+                                  width={600}
+                                  height={400}
+                                  src={ImageURL}
+                                  alt="Image not available"
+                                  className="contain"
+                                />
+                              )}
                             </div>
                             <div className="md:w-2/3 m-4 ">
                               <div className="flex text-gray-500 text-sm m-2">

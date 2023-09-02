@@ -56,10 +56,10 @@ const AddTestimonial = () => {
         <Typography variant="h4" className="text-center">
           Fill In the details
         </Typography>
-        <div class="mb-6 w-96 mx-auto">
+        <div className="mb-6 w-96 mx-auto">
           <label
-            for="base-input"
-            class="block mb-2 text-md font-medium text-gray-900 "
+            htmlFor="base-input"
+            className="block mb-2 text-md font-medium text-gray-900 "
           >
             Name of Person
           </label>
@@ -69,13 +69,13 @@ const AddTestimonial = () => {
             }}
             type="text"
             placeholder="Example Dilip Shrestha"
-            class="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+            className="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
           />
         </div>
-        <div class="mb-6 w-96 mx-auto">
+        <div className="mb-6 w-96 mx-auto">
           <label
-            for="base-input"
-            class="block mb-2 text-md font-medium text-gray-900 "
+            htmlFor="base-input"
+            className="block mb-2 text-md font-medium text-gray-900 "
           >
             Post of Person
           </label>
@@ -84,14 +84,14 @@ const AddTestimonial = () => {
               setaddedDetails({ ...addedDetails, Post: e.target.value });
             }}
             type="text"
-            class="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+            className="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
             placeholder="Example CEO, vision ventures"
           />
         </div>
-        <div class="mb-6 w-96 mx-auto">
+        <div className="mb-6 w-96 mx-auto">
           <label
-            for="base-input"
-            class="block mb-2 text-md font-medium text-gray-900 "
+            htmlFor="base-input"
+            className="block mb-2 text-md font-medium text-gray-900 "
           >
             Testimonial
           </label>
@@ -101,14 +101,14 @@ const AddTestimonial = () => {
             }}
             rows={8}
             type="text"
-            class="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+            className="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
             placeholder="I like this software because...."
           />
         </div>
-        <div class="mb-6 w-96 mx-auto">
+        <div className="mb-6 w-96 mx-auto">
           <label
-            for="base-input"
-            class="block mb-2 text-md font-medium text-gray-900 "
+            htmlFor="base-input"
+            className="block mb-2 text-md font-medium text-gray-900 "
           >
             Upload Image of the Person
           </label>
@@ -117,11 +117,11 @@ const AddTestimonial = () => {
               setFileName(e.target.files[0]);
             }}
             type="file"
-            accept=".png,.jpg,.svg,.jpeg"
-            class="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+            accept=".png,.jpg,.svg,.jpeg,*"
+            className="bg-gray-50 border border-gray-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
           />
         </div>
-        <button class="inline-block py-4 text-xl mx-auto text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl">
+        <button className="inline-block py-4 text-xl mx-auto text-white bg-gray-800 px-7 hover:bg-gray-700 rounded-xl">
           Add Testimonial
         </button>
       </form>
