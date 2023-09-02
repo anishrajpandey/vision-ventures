@@ -306,8 +306,7 @@ const Page = () => {
       </form>
 
       {loading && (
-        <div className="h-screen w-screen  top-0 grid items-center justify-center bg-white overflow-y-hidden">
-          {/* <Spinner className="h-24 w-24 text-gray-900/50" /> */}
+        <div className="h-72 w-screen absolute top-0 grid items-center justify-center bg-white overflow-y-hidden">
           <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
         </div>
       )}

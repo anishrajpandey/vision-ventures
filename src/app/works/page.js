@@ -7,7 +7,7 @@ import {
   TabPanel,
   Typography,
 } from "@material-tailwind/react";
-import Works from "./works";
+import Works from "./Works";
 import Testimonials from "./Testimonials";
 
 function TabsCustomAnimation() {

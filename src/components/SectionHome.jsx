@@ -145,6 +145,7 @@ const SectionHome = () => {
             </Link>
           </div>
         </div>
+
         <div className=" relative group overflow-hidden">
           <Image
             className=" max-w-sm transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"

@@ -6,13 +6,12 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Alert, Button, Card, Typography } from "@material-tailwind/react";
 import Image from "next/image";
-// import {DeleteIcon} from '
 
 const Page = () => {
   const TABLE_HEAD = ["OrderID", "First Name", "Last Name", "Type"];
   const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState({});
-  const [isAdmin, setIsAdmin] = useState(false); //done
+  const [isAdmin, setIsAdmin] = useState(false);
   const USERID = "admin";
   const PASS = "admin";
   const handleSubmit = (e) => {
@@ -78,10 +77,10 @@ const Page = () => {
       <div
         className={`${
           selectedOrder.show ? "block" : "hidden"
-        }  z-50 absolute top-1/4 bg-blue-300`}
+        }  z-50 absolute top-0 bg-blue-300`}
       >
-        <div className="flex flex-wrap justify-center">
-          <div className="w-full lg:w-3/12  lg:order-2 flex justify-center"></div>
+        <div className="flex flex-wrap justify-start">
+          <div className="w-full lg:w-3/12  lg:order-2 flex justify-start"></div>
           <div className="w-full lg:w-4/12 lg:order-3 lg:text-right lg:self-center">
             <div className="py-6  mt-32 sm:mt-0">
               <button
@@ -97,32 +96,29 @@ const Page = () => {
           </div>
           <div className="w-full lg:w-4/12 px-4 text-center text-blue-700 flex justify-end text-3xl font-bold"></div>
         </div>
-        <div className="text-center mt-12 w-screen">
+        <div className="text-left px-7 mt-12 w-screen">
           <h3 className="text-4xl font-semibold text-red-600 leading-normal text-blueGray-700 mb-2">
             {selectedOrder.Type}
           </h3>
           <h3 className="text-4xl font-semibold leading-normal text-blueGray-700 mb-2">
             Name: {selectedOrder.FirstName} {selectedOrder.LastName}
           </h3>
-          <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
+          <div className="leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase text-xl">
             <i className="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
-            {selectedOrder.Address}
+            Address: {selectedOrder.Address}
           </div>
           <div className="mb-2 text-blueGray-600 mt-10">
-            <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-            {selectedOrder.Email}{" "}
+            <i className="fas fa-briefcase mr-2 text-xl font-semibold text-blueGray-400"></i>
+            Email: {selectedOrder.Email}{" "}
           </div>
           <div className="mb-2 text-blueGray-600">
-            <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-            {selectedOrder.Phone}{" "}
+            <i className="fas fa-university mr-2 text-xl font-semibold text-blueGray-400"></i>
+            Phone: {selectedOrder.Phone}{" "}
           </div>
         </div>
         <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
           <div className="flex flex-wrap justify-center">
-            <div className="w-full lg:w-9/12 px-4">
-              <p className="mb-4 text-lg leading-relaxed text-blueGray-700">
-                {selectedOrder.Description}
-              </p>
+            <div className="w-full flex flex-wrap justify-start lg:w-9/12 px-4">
               <div className="flex justify-center w-screen m-3 ">
                 {selectedOrder.Url && (
                   <Image
@@ -133,7 +129,11 @@ const Page = () => {
                   />
                 )}
               </div>
-
+              <p className="mb-4 text-md text-center  leading-relaxed text-blueGray-700">
+                {selectedOrder.Description}
+              </p>
+            </div>
+            <div>
               <a
                 href={selectedOrder.Url}
                 target="blank"
@@ -157,13 +157,6 @@ const Page = () => {
                 className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
               >
                 Delete the order
-              </Button>
-              <Button
-                variant="outlined"
-                color="error"
-                className="outline-2 outline-red-600"
-              >
-                Error
               </Button>
             </div>
           </div>
@@ -255,7 +248,10 @@ const Page = () => {
                     </Alert>
                   )}
                   {orders.map(({ FirstName, LastName, id, Type }, index) => (
-                    <tr key={id} className="even:bg-blue-gray-50/50">
+                    <tr
+                      key={id}
+                      className="even:bg-blue-gray-50/50 border rounded-sm"
+                    >
                       <td className="p-4">
                         <Typography
                           variant="small"
@@ -308,7 +304,7 @@ const Page = () => {
                             href="#"
                             variant="small"
                             color="blue-gray"
-                            className="font-medium bg-blue-800 py-2 px-6 flex justify-center hover:bg-transparent transition-all hover:text-black hover:outline-2 text-white "
+                            className="font-medium bg-blue-800 py-2 px-6 flex justify-center hover:bg-transparent transition-all hover:text-black hover:outline-2 outline-black text-white "
                           >
                             Details
                           </Typography>
