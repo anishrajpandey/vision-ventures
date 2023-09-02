@@ -94,7 +94,7 @@ const Page = () => {
             {type}
           </h1>
           <h2 className="text-center text-md mb-5  font-semibold  text-slate-700">
-            You are one step away from getting our service{" "}
+            Please Fill in the form below
           </h2>
         </div>
       </div>
@@ -120,9 +120,6 @@ const Page = () => {
               placeholder="Name"
               required
             />
-            {/* <p className="text-red-500 text-xs italic">
-              Please fill out this field.
-            </p> */}
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label

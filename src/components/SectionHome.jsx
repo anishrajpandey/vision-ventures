@@ -16,7 +16,7 @@ const SectionHome = () => {
             <h3 className="z-10 mt-3 text-3xl font-bold  text-center  text-black ">
               Digital Marketing
             </h3>
-            <Link href={"/services/explore"} className="w-full ">
+            <Link href={"/services/5"} className="w-full ">
               <div className="flex justify-center">
                 <button className="bg-orange-600 hover:bg-transparent border w-1/2 mx-auto my-4 rounded-md text-white h-12">
                   Explore
@@ -36,7 +36,7 @@ const SectionHome = () => {
             <h3 className="z-10 mt-3 text-3xl font-bold  text-center text-black">
               Software and Website Development
             </h3>
-            <Link href={"/services/webdev"} className="w-full ">
+            <Link href={"/services/6"} className="w-full ">
               <div className="flex justify-center">
                 <button className="bg-orange-600 hover:bg-transparent border w-1/2 mx-auto my-4 rounded-md text-white h-12">
                   Explore
@@ -56,7 +56,7 @@ const SectionHome = () => {
             <h3 className="z-10 mt-3 text-3xl font-bold  text-center text-black">
               Search Engine Optimization{" "}
             </h3>
-            <Link href={"/services/webdev"} className="w-full ">
+            <Link href={"/services/4"} className="w-full ">
               <div className="flex justify-center">
                 <button className="bg-orange-600 hover:bg-transparent border w-1/2 mx-auto my-4 rounded-md text-white h-12">
                   Explore
@@ -76,7 +76,7 @@ const SectionHome = () => {
             <h3 className="z-10 mt-3 text-3xl font-bold  text-center text-black  ">
               Event Management
             </h3>
-            <Link href={"/services/event"} className="w-full ">
+            <Link href={"/services/1"} className="w-full ">
               <div className="flex justify-center">
                 <button className="bg-orange-600 hover:bg-transparent border w-1/2 mx-auto my-4 rounded-md text-white h-12">
                   Explore
@@ -96,7 +96,7 @@ const SectionHome = () => {
             <h3 className="z-10 mt-3 text-3xl font-bold  text-center text-black  ">
               Graphics, Animation & Logo Design
             </h3>
-            <Link href={"/services/event"} className="w-full ">
+            <Link href={"/services/3"} className="w-full ">
               <div className="flex justify-center">
                 <button className="bg-orange-600 hover:bg-transparent border w-1/2 mx-auto my-4 rounded-md text-white h-12">
                   Explore
@@ -116,7 +116,7 @@ const SectionHome = () => {
             <h3 className="z-10 mt-3 text-3xl font-bold  text-center text-black  ">
               Office Infrastructure
             </h3>
-            <Link href={"/services/event"} className="w-full ">
+            <Link href={"/services/7"} className="w-full ">
               <div className="flex justify-center">
                 <button className="bg-orange-600 hover:bg-transparent border w-1/2 mx-auto my-4 rounded-md text-white h-12">
                   Explore
@@ -136,7 +136,7 @@ const SectionHome = () => {
             <h3 className="z-10 mt-3 text-3xl font-bold  text-center text-black  ">
               Photography & Videography
             </h3>
-            <Link href={"/services/event"} className="w-full ">
+            <Link href={"/services/0"} className="w-full ">
               <div className="flex justify-center">
                 <button className="bg-orange-600 hover:bg-transparent border w-1/2 mx-auto my-4 rounded-md text-white h-12">
                   Explore
@@ -156,7 +156,7 @@ const SectionHome = () => {
             <h3 className="z-10 mt-3 text-3xl font-bold  text-center text-black  ">
               Hardware & Networking
             </h3>
-            <Link href={"/services/event"} className="w-full ">
+            <Link href={"/services/2"} className="w-full ">
               <div className="flex justify-center">
                 <button className="bg-orange-600 hover:bg-transparent border w-1/2 mx-auto my-4 rounded-md text-white h-12">
                   Explore
