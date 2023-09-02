@@ -47,10 +47,6 @@ export default function AddWorks() {
     });
   }
 
-  function testData(e) {
-    console.log(e.target.elements);
-  }
-
   return (
     <Card
       className=" -screen flex  items-center"

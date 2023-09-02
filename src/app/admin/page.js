@@ -13,6 +13,7 @@ import {
 } from "@material-tailwind/react";
 import ManageOrder from "./ManageOrder";
 import AddWorks from "./AddWorks";
+import AddTestimonial from "./AddTestimonial";
 const Page = () => {
   const [orders, setOrders] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -72,11 +73,9 @@ const Page = () => {
       desc: <AddWorks />,
     },
     {
-      label: "Vue",
-      value: "vue",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      label: "Add Testimonials",
+      value: "testimonials",
+      desc: <AddTestimonial />,
     },
     {
       label: "Angular",
