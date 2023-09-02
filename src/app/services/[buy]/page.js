@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 import { collection, addDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Spinner } from "@material-tailwind/react";
+import { Dialog, DialogBody, DialogHeader } from "@material-tailwind/react";
 const Page = () => {
   const [type, setType] = useState("Book a service");
   const [FileName, setFileName] = useState(null);
@@ -24,8 +24,6 @@ const Page = () => {
     "Website Design & Development",
     "Office Infrastructure",
   ];
-  function handleChangeData() {}
-
   let path = usePathname();
   useEffect(() => {
     let category = categories[path.split("/").at(-1)];
@@ -305,11 +303,20 @@ const Page = () => {
         />
       </form>
 
-      {loading && (
-        <div className="h-72 w-screen absolute top-0 grid items-center justify-center bg-white overflow-y-hidden">
-          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
-        </div>
-      )}
+      <Dialog
+        open={loading}
+        animate={{
+          mount: { scale: 1, y: 0 },
+          unmount: { scale: 0.9, y: -100 },
+        }}
+      >
+        <DialogHeader className="text-center">Loading...</DialogHeader>
+        <DialogBody divider>
+          <div className="flex w-full items-center justify-center bg-white overflow-y-hidden">
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+          </div>
+        </DialogBody>
+      </Dialog>
     </main>
   );
 };

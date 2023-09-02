@@ -4,14 +4,7 @@ import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import {
-  Alert,
-  Button,
-  Card,
-  List,
-  ListItem,
-  Typography,
-} from "@material-tailwind/react";
+import { Alert, Button, Card, Typography } from "@material-tailwind/react";
 import Image from "next/image";
 
 const ManageOrder = () => {
@@ -262,6 +255,18 @@ const ManageOrder = () => {
           ))} */}
       </div>
       <ShowDetailsPage />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 };
