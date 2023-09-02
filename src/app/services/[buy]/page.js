@@ -117,7 +117,7 @@ const Page = () => {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
-              placeholder="Raju"
+              placeholder="Name"
               required
             />
             {/* <p className="text-red-500 text-xs italic">
@@ -141,7 +141,7 @@ const Page = () => {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-last-name"
               type="text"
-              placeholder="Lama"
+              placeholder="Last Name"
             />
           </div>
         </div>
@@ -159,7 +159,7 @@ const Page = () => {
             className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             id="email"
             type="text"
-            placeholder="abc@xyz.com"
+            placeholder="email@example.com"
             required
           />
         </div>
@@ -178,7 +178,7 @@ const Page = () => {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="phone"
               type="num"
-              placeholder="9866554782"
+              placeholder="10 digit phone number"
               required
             />
             <p className="text-gray-600 text-xs italic">
@@ -201,7 +201,7 @@ const Page = () => {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-city"
               type="text"
-              placeholder="Albuquerque"
+              placeholder="Address"
             />
           </div>
 
@@ -309,10 +309,9 @@ const Page = () => {
       </form>
 
       {loading && (
-        <div className="h-screen w-screen fixed top-0 grid items-center justify-center bg-white overflow-y-hidden">
-          {/* <div className=" absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"> */}
-          <Spinner className="h-24 w-24 text-gray-900/50" />
-          {/* </div> */}
+        <div className="h-screen w-screen  top-0 grid items-center justify-center bg-white overflow-y-hidden">
+          {/* <Spinner className="h-24 w-24 text-gray-900/50" /> */}
+          <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
         </div>
       )}
     </main>

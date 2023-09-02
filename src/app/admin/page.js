@@ -4,13 +4,15 @@ import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { Card, Typography } from "@material-tailwind/react";
+import { Alert, Button, Card, Typography } from "@material-tailwind/react";
 import Image from "next/image";
+// import {DeleteIcon} from '
+
 const Page = () => {
   const TABLE_HEAD = ["OrderID", "First Name", "Last Name", "Type"];
-  const [orders, setOrders] = useState({});
+  const [orders, setOrders] = useState([]);
   const [selectedOrder, setSelectedOrder] = useState({});
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false); //done
   const USERID = "admin";
   const PASS = "admin";
   const handleSubmit = (e) => {
@@ -56,6 +58,7 @@ const Page = () => {
 
   useEffect(() => {
     getOrders();
+    console.log(orders);
   }, []);
   //delete the orders
   async function handleDeleteOrder(id) {
@@ -70,17 +73,7 @@ const Page = () => {
   }
 
   //details page component
-  function ShowDetailsPage({
-    id,
-    FirstName,
-    LastName,
-    Type,
-    // Email,
-    // Phone,
-    // Description,
-    // Url,
-    // Address,
-  }) {
+  function ShowDetailsPage() {
     return (
       <div
         className={`${
@@ -131,12 +124,14 @@ const Page = () => {
                 {selectedOrder.Description}
               </p>
               <div className="flex justify-center w-screen m-3 ">
-                <Image
-                  src={selectedOrder.Url}
-                  width={500}
-                  height={500}
-                  alt="Unable to load the file. Click on the button below"
-                />
+                {selectedOrder.Url && (
+                  <Image
+                    src={selectedOrder.Url}
+                    width={500}
+                    height={500}
+                    alt="Unable to load the file. Click on the button below"
+                  />
+                )}
               </div>
 
               <a
@@ -151,15 +146,25 @@ const Page = () => {
                   Get Access to the Shared File
                 </button>
               </a>
-              <button
+              <Button
+                // startIcon={<DeleteIcon />}
                 onClick={() => {
                   handleDeleteOrder(selectedOrder.id);
+                  getOrders();
+                  setSelectedOrder({ ...selectedOrder, show: false });
                 }}
                 type="button"
                 className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
               >
                 Delete the order
-              </button>
+              </Button>
+              <Button
+                variant="outlined"
+                color="error"
+                className="outline-2 outline-red-600"
+              >
+                Error
+              </Button>
             </div>
           </div>
         </div>
@@ -205,9 +210,9 @@ const Page = () => {
         </div>
       ) : (
         <>
-          <div className="h-screen pt-32">
+          <div className="min-h-screen pt-32">
             <h2 className="text-center text-4xl text-orange-700 font-sans font-semibold pb-2">
-              Welcome To Admin Panel.{" "}
+              Welcome To Admin Panel({orders.length} orders)
             </h2>
 
             {/* --------------------- */}
@@ -229,9 +234,26 @@ const Page = () => {
                         </Typography>
                       </th>
                     ))}
+                    <Button
+                      variant="contained"
+                      onClick={getOrders}
+                      className="bg-green-500"
+                    >
+                      Refresh
+                    </Button>
                   </tr>
                 </thead>
+
                 <tbody>
+                  {!orders[0] && (
+                    <Alert
+                      severity="error"
+                      className="w-full  my-4 p-2 bg-red-700 flex justify-center py-5"
+                    >
+                      {/* <AlertTitle>Error</AlertTitle> */}
+                      <strong>Error :</strong> No Orders Available Right Now !!
+                    </Alert>
+                  )}
                   {orders.map(({ FirstName, LastName, id, Type }, index) => (
                     <tr key={id} className="even:bg-blue-gray-50/50">
                       <td className="p-4">
@@ -306,7 +328,7 @@ const Page = () => {
       )}
 
       {/* login page ends here */}
-      <button onClick={getOrders}>log it </button>
+
       <ShowDetailsPage />
 
       <ToastContainer
