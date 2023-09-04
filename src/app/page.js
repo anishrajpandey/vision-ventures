@@ -13,6 +13,7 @@ import Manwithphone from "@/components/svgs/Manwithphone";
 import SectionHome from "@/components/SectionHome";
 import Link from "next/link";
 import { Fade } from "react-reveal";
+import Numbers from "@/components/Numbers";
 const TEXTS = [
   "Photography  ",
   "Digital Media Management",
@@ -47,7 +48,7 @@ export default function Home() {
             <h2 className="lg:mt-20 text-3xl md:text-4xl font-bold tracking-tight text-center min-h-fit pb-4">
               We help your Business with
               {/* <div className="flex justify-center">Solution For</div> */}
-              <span className="text-primary dark:text-primary-400">
+              <span className="text-primary ">
                 <TextTransition
                   className={`flex justify-center text-orange-700 uppercase  tracking-wider  ${font.className}`}
                   springConfig={presets.stiff}
@@ -292,6 +293,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Numbers />
     </main>
   );
 }

@@ -3,73 +3,55 @@ import React from "react";
 
 const About = () => {
   return (
-    <div class="flex justify-center pt-0 md:pt-0 md:pt-32 ">
-      <div class="flex flex-col justify-center items-center">
-        <div class="flex flex-col md:flex-row max-w-7xl justify-center items-center ">
-          <div class="overflow-hidden w-2/3 m-4 flex justify-center ">
-            <div class="flex  items-center justify-center  ">
-              <div class="  items-center justify-center flex flex-col lg:flex-row ">
-                <div class="flex items-center justify-around h-60  w-full lg:text-left text-center ">
-                  <div class="flex flex-col md:flex-row items-center  ">
-                    <img
-                      src="https://source.unsplash.com/100x100/?man,boy"
-                      alt=""
-                      class="rounded-full"
-                    />
-                    <div>
-                      <div class="font-bold text-gray-600 mx-4">John Doe</div>
-                      <div class="text-sm font-medium text-gray-500 hover:text-stone-500 mx-4">
-                        <a href="#">SEO Executive, Tailblocks</a>
-                      </div>
-                    </div>
+    <>
+      {" "}
+      <h1 className="text-orange-600 md:pt-32  text-2xl md:text-4xl font-semibold my-4 text-center">
+        About Vision Ventures
+      </h1>
+      <div className="flex  flex-wrap justify-center items-center rounded-lg p-10 md:py-16">
+        <div className=" w-full md:w-1/2 py-4 shadow-lg  flex justify-center  max-w-7xl ">
+          <div className="px-8">
+            <div className="flex items-center justify-center space-x-10">
+              <div className=" md:ml-[6px] flex flex-col items-center lg:flex-row  bg-white">
+                <Image
+                  src="/images/founder.jpg"
+                  className=" rounded-full cover"
+                  width={150}
+                  height={150}
+                  alt="Unable to load image"
+                />
+
+                <div className="px-5 py-10 text-black flex flex-col w-full lg:w-[70%] ">
+                  <p className="text-md -mt-5 -ml-5 md:-ml-0  text-left">
+                    Welcome to our company, where we offer a comprehensive range
+                    of services to help businesses establish and enhance their
+                    brand image
+                  </p>
+                  <div className="mt-5 text-left -ml-5 md:text-right ">
+                    <a
+                      href="https://www.facebook.com/profile.php?id=100016064358963"
+                      target="blank"
+                    ></a>
+                    <h1 className="font-bold text-lg">Mr. Dilip Shrestha</h1>
+                    <p className="text-sm text-semobold">Founder & CEO</p>
+                    <p className="text-sm ">Vision Ventures Branding Company</p>
                   </div>
-                </div>
-                <div class="text-gray-600 text-xl font-medium lg:text-left text-center ">
-                  {" "}
-                  Tailblocks provides best Tailwind CSS Components and Blocks to
-                  create an unique websites within minutes. It has upto 60+ free
-                  components for front-end Web Development.
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    // <main className="flex flex-wrap w-screen bg--600">
-    //   <section className="flex items-center pt-20  xl:h-screen  ">
-    //     <div className="justify-center flex-1 max-w-6xl px-4 mx-auto lg:py-6 md:px-6 h-fit bg-slate-100 rounded-xl">
-    //       <address class="flex items-center mb-6 not-italic">
-    //         <div class="inline-flex  items-center mr-3 text-sm text-gray-900  h-36 ">
-    //           <div class="inline-flex relative items-center mr-3 text-sm text-gray-900 w-24 h-24">
-    //             <Image
-    //               fill
-    //               class="mr-4 w-16 h-16 rounded-full"
-    //               src="/images/founder.jpg"
-    //               alt="Unable to load image"
-    //             />
-    //           </div>
-    //           <div>
-    //             <a
-    //               href="https://www.facebook.com/profile.php?id=100016064358963"
-    //               rel="founder"
-    //               target="_blank"
-    //               class="text-xl font-bold text-gray-900 "
-    //             >
-    //               Mr. Dilip Shrestha
-    //             </a>
-    //             <p class="text-base font-semibold text-gray-500 ">
-    //               Founder & CEO,
-    //             </p>
-    //             <p class="text-base font-light text-gray-500 ">
-    //               Vision Ventures Branding Company Private Limited
-    //             </p>
-    //           </div>
-    //         </div>
-    //       </address>
-    //     </div>
-    //   </section>
-    // </main>
+      <div className="mx-auto mb-12  w-5/6 ">
+        <Image
+          width={1000}
+          height={500}
+          className=" w-full rounded-lg object-contain object-center shadow-xl shadow-blue-gray-900/50"
+          src={"/images/banner.jpg"}
+          alt="banners"
+        />
+      </div>
+    </>
   );
 };
 
