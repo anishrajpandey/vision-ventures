@@ -49,24 +49,36 @@ export default function Example() {
           </button>
 
           <ul className="rounded absolute hidden z-30 text-gray-700 pt-1 w-fit group-hover:block   ">
-            <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer">
-              Photography
-            </li>
-            <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer">
-              Digital Marketing
-            </li>
-            <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer w-fit">
-              Event Management
-            </li>
-            <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer w-fit">
-              SEO and Web Development
-            </li>
-            <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer w-fit">
-              Graphics Design
-            </li>
-            <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer w-fit">
-              Hardware and Network
-            </li>
+            <Link href={"/services/0"}>
+              <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer">
+                Photography
+              </li>
+            </Link>
+            <Link href={"/services/5"}>
+              <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer">
+                Digital Marketing
+              </li>
+            </Link>
+            <Link href={"/services/1"}>
+              <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer w-fit">
+                Event Management
+              </li>
+            </Link>
+            <Link href={"/services/4"}>
+              <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer w-fit">
+                SEO and Web Development
+              </li>
+            </Link>
+            <Link href={"/services/3"}>
+              <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer w-fit">
+                Graphics Design
+              </li>
+            </Link>
+            <Link href={"/services/2"}>
+              <li className="bg-gray-200 hover:bg-gray-400 py-4 px-4 cursor-pointer w-fit">
+                Hardware and Network
+              </li>
+            </Link>
           </ul>
         </div>
       </article>
