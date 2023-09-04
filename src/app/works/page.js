@@ -74,7 +74,7 @@ function TabsCustomAnimation() {
 export default function Page() {
   return (
     <>
-      <section className="min-h-screen pt-32">
+      <section className="min-h-screen pt-0 md:pt-32">
         <TabsCustomAnimation />
       </section>
     </>

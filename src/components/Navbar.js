@@ -99,7 +99,7 @@ export default function Example() {
         color="blue-gray"
         className="text-md md:text-xl p-1 font-medium text-black hover:text-gray-600"
       >
-        <Link href="#" className={`flex items-center`}>
+        <Link href="/about" className={`flex items-center`}>
           <div>About Us</div>
         </Link>
       </article>

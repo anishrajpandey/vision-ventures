@@ -132,7 +132,7 @@ const Page = () => {
         </div>
       ) : (
         <>
-          <Tabs value="html" className="min-h-screen pt-32">
+          <Tabs value="html" className="min-h-screen pt-0 md:pt-32">
             <TabsHeader
               indicatorProps={{
                 className: "bg-gray-900/10 shadow-none !text-gray-900",
