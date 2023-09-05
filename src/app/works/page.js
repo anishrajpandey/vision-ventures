@@ -9,6 +9,7 @@ import {
 } from "@material-tailwind/react";
 import Works from "./Works";
 import Testimonials from "./Testimonials";
+import Gallery from "@/components/Gallery";
 
 function TabsCustomAnimation() {
   const data = [
@@ -24,11 +25,9 @@ function TabsCustomAnimation() {
     },
 
     {
-      label: "Featured",
-      value: "featuring",
-      desc: `We're not always in the position that we want to be at.
-      We're constantly growing. We're constantly making mistakes. We're
-      constantly trying to express ourselves and actualize our dreams.`,
+      label: "Gallery",
+      value: "gallery",
+      desc: <Gallery />,
     },
   ];
 

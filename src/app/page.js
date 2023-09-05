@@ -293,8 +293,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Numbers />
+      <Fade>
+        <Numbers />
+      </Fade>
     </main>
   );
 }

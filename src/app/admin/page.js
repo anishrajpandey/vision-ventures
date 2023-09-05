@@ -15,6 +15,7 @@ import ManageOrder from "./ManageOrder";
 import AddWorks from "./AddWorks";
 import AddTestimonial from "./AddTestimonial";
 import UserMessages from "./UserMessages";
+import UploadImageToGallery from "./UploadImageToGallery";
 const Page = () => {
   const [orders, setOrders] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -77,6 +78,11 @@ const Page = () => {
       label: "Add Testimonials",
       value: "testimonials",
       desc: <AddTestimonial />,
+    },
+    {
+      label: "Upload Gallery Image",
+      value: "gallery",
+      desc: <UploadImageToGallery />,
     },
     {
       label: "See User Messages",
