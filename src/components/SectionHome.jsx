@@ -7,7 +7,7 @@ const SectionHome = () => {
       <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 h-full w-4/5 mx-auto ">
         <div className=" relative group overflow-hidden">
           <Image
-            className=" max-w-sm transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+            className="max-w-sm object-contain transition-all  duration-300 cursor-pointer filter md:grayscale group-hover:grayscale-0 group-hover:scale-105"
             fill
             src="/images/marketing1.jpg"
             alt="image description"
@@ -27,7 +27,7 @@ const SectionHome = () => {
         </div>
         <div className=" relative group overflow-hidden">
           <Image
-            className=" max-w-sm transition-all duration-300 cursor-pointer filter md:grayscale  group-hover:grayscale-0 group-hover:scale-105"
+            className=" max-w-sm object-contain transition-all duration-300 cursor-pointer filter md:grayscale  group-hover:grayscale-0 group-hover:scale-105"
             fill
             src="/images/webdev.jpg"
             alt="image description"
@@ -47,7 +47,7 @@ const SectionHome = () => {
         </div>
         <div className=" relative group overflow-hidden">
           <Image
-            className=" max-w-sm transition-all duration-300 cursor-pointer filter md:grayscale  group-hover:grayscale-0 group-hover:scale-105"
+            className=" max-w-sm object-contain transition-all duration-300 cursor-pointer filter md:grayscale  group-hover:grayscale-0 group-hover:scale-105"
             fill
             src="/images/seo.jpg"
             alt="image description"
@@ -67,7 +67,7 @@ const SectionHome = () => {
         </div>
         <div className=" relative group overflow-hidden">
           <Image
-            className=" max-w-sm transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+            className=" max-w-sm object-contain transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
             fill
             src="/images/eventmanagement.jpg"
             alt="image description"
@@ -87,7 +87,7 @@ const SectionHome = () => {
         </div>
         <div className=" relative group overflow-hidden">
           <Image
-            className=" max-w-sm transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+            className=" max-w-sm object-contain transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
             fill
             src="/images/logodesign.jpg"
             alt="image description"
@@ -107,7 +107,7 @@ const SectionHome = () => {
         </div>
         <div className=" relative group overflow-hidden">
           <Image
-            className=" max-w-sm transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+            className=" max-w-sm object-contain transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
             fill
             src="/images/officeinfrastructure.png"
             alt="image description"
@@ -127,7 +127,7 @@ const SectionHome = () => {
         </div>
         <div className=" relative group overflow-hidden">
           <Image
-            className=" max-w-sm transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+            className=" max-w-sm object-contain transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
             fill
             src="/images/photography.jpg"
             alt="image description"
@@ -148,7 +148,7 @@ const SectionHome = () => {
 
         <div className=" relative group overflow-hidden">
           <Image
-            className=" max-w-sm transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
+            className=" max-w-sm object-contain transition-all duration-300 cursor-pointer filter  md:grayscale group-hover:grayscale-0 group-hover:scale-105"
             fill
             src="/images/hardwarenetwork.jpg"
             alt="image description"
