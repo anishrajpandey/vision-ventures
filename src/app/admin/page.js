@@ -19,8 +19,8 @@ import UploadImageToGallery from "./UploadImageToGallery";
 const Page = () => {
   const [orders, setOrders] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
-  const USERID = "admin";
-  const PASS = "admin";
+  const USERID = "Vision";
+  const PASS = "Vision@2081";
   const handleSubmit = (e) => {
     e.preventDefault();
     const elements = e.target.elements;
